@@ -189,3 +189,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+# Entorno y datos locales
+.venv/
+data/
+mlruns/
+mlflow.db
+models/*.joblib
+.DS_Store
