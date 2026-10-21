@@ -7,6 +7,7 @@ from sklearn.ensemble import HistGradientBoostingRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 import typer
 import mlflow
+import mlflow.data
 import mlflow.sklearn
 
 from mibici.config import (
@@ -111,6 +112,16 @@ def main(
         mlflow.log_params(params)
         mlflow.log_metrics(baseline_metrics)
 
+        # Registro y versionado formal del dataset en MLflow (Requisito 4)
+        logger.info("Registrando metadatos y version del dataset en MLflow...")
+        dataset_source = mlflow.data.from_pandas(
+            df=train_df[feature_cols + ["balance"]],
+            source=str(features_path),
+            name=f"mibici_features_{TARGET_YEAR}",
+            targets="balance",
+        )
+        mlflow.log_input(dataset_source, context="training")
+
         # 1. Entrenar Modelo de Entradas
         logger.info("Entrenando modelo de Entradas (HistGradientBoosting)...")
         model_entradas = HistGradientBoostingRegressor(**params)
@@ -165,7 +176,7 @@ def main(
             artifact_path="model_salidas",
             serialization_format="cloudpickle",
         )
-        logger.success("Modelos y metricas registrados exitosamente en MLflow.")
+        logger.success("Modelos, metricas y dataset registrados exitosamente en MLflow.")
 
 if __name__ == "__main__":
     app()
