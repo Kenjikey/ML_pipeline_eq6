@@ -1,0 +1,13 @@
+[
+  {
+    "id": "raw_v1",
+    "archivo": "mibici_raw_v1.tar.xz",
+    "sha256": "86a97d3b37343b88e3631eca2d877287a496ffac74bd86acdc8e97e35e7931f5",
+    "url": "https://drive.google.com/file/d/1qaQ0reoO8ju_6j1bpB-UxCCBjSb17g4N/view?usp=share_link",
+    "origen": [],
+    "transformaciones": [
+      "Empaquetar y comprimir los archivos originales sin ninguna modificacion"
+    ],
+    "commit": null
+  }
+]
