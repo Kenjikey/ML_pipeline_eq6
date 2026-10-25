@@ -26,3 +26,5 @@
 --> url: https://drive.google.com/open?id=15VrUR1ub8L3h7iB9_WZh3iaqz_XEJS79&usp=drive_fs
 -> carpeta: raw
 -> url: https://drive.google.com/open?id=1qaQ0reoO8ju_6j1bpB-UxCCBjSb17g4N&usp=drive_fs
+-> carpeta: mibici_raw_v1.tar
+-> https://drive.google.com/open?id=1qaQ0reoO8ju_6j1bpB-UxCCBjSb17g4N&usp=drive_fs
