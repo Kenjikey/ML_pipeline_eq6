@@ -1,0 +1,28 @@
+-> carpeta: interim 
+-> url: https://drive.google.com/open?id=18mAc7FSJgBEyySngr5P-ZwzAkshru60f&usp=drive_fs
+-->  df_raw_parte_1.parquet 
+--> url: https://drive.google.com/open?id=1oUrlYSCoyjJTjIG9k0uIkJuV6ydmj9Hi&usp=drive_fs
+-->  df_raw_parte_2.parquet 
+--> url: https://drive.google.com/open?id=1pey-0b4qOi3e--QjhFMsOwE766eU1cKM&usp=drive_fs
+-->  df_raw_parte_3.parquet 
+--> url: https://drive.google.com/open?id=1du7eLEAmbH23Q1BywdT_M7f3vyHNPMon&usp=drive_fs
+ -> carpeta: ml_ready
+-> url: https://drive.google.com/open?id=1AO1H6laTmjogxt4DdQKkGCAVCw5wG8Fj&usp=drive_fs
+-->  df_ml_parte_1.parquet
+--> url: https://drive.google.com/open?id=1Yu2vWjBgB4NZMCI_dlc2obdDHfzI8Icf&usp=drive_fs
+--> df_ml_parte_2.parquet 
+--> url: https://drive.google.com/open?id=1yynAl_g5L5s9_ffOFirOqMNueLaMU7sQ&usp=drive_fs
+--> df_ml_parte_3.parquet
+--> url: https://drive.google.com/open?id=1FjYhUjC_-Waoq9HGzhlMXOuN8wX8sTWt&usp=drive_fs
+--> metadata_ml_features.json
+--> url: https://drive.google.com/open?id=1G-1VIK3M7FGQarocduIZrIyj6aXlBTVo&usp=drive_fs
+ -> carpeta: processed
+-> url: https://drive.google.com/open?id=1uVkdrpoURdJxNuyJxnj8RpSRtL3Refch&usp=drive_fs
+-->  df_clean_parte_1.parquet
+--> url: https://drive.google.com/open?id=1GcWemYIItt80WWnJb0LcghIP-ia5klM5&usp=drive_fs
+-->  df_clean_parte_2.parquet
+--> url: https://drive.google.com/open?id=12WCK8aBRRHLYOaw7l3TYqMImwaR4LKUN&usp=drive_fs
+-->  df_clean_parte_3.parquet
+--> url: https://drive.google.com/open?id=15VrUR1ub8L3h7iB9_WZh3iaqz_XEJS79&usp=drive_fs
+-> carpeta: raw
+-> url: https://drive.google.com/open?id=1qaQ0reoO8ju_6j1bpB-UxCCBjSb17g4N&usp=drive_fs
