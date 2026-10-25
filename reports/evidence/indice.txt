@@ -1,7 +1,5 @@
 EVIDENCIA DE FASE 1 — VERSIÓN V2
 
-Todas las capturas proceden de la interfaz real, sin reconstrucciones.
-
 00_archivos_drive.jpg: los dos Parquet versionados, con las cargas completadas.
 mlflow/01_ejecuciones_oficiales.jpg: las tres ejecuciones oficiales filtradas.
 mlflow/02_limpieza_metricas.jpg: filas originales, descartes y viajes conservados.
@@ -14,7 +12,7 @@ mlflow/07_artefactos_eda.jpg: seis gráficas, manifiestos y una figura visible e
 mlflow/ejecuciones_oficiales.json: exportación de parámetros, métricas, tags, datasets
 y artefactos de las tres ejecuciones, obtenida mediante la API local de MLflow.
 verificacion_drive.json: comprobación SHA-256 mediante descarga pública de ambos
-Parquet desde Drive, sin autenticación y sin guardar copias adicionales.
+Parquet desde Drive.
 
 La captura 03 aplica un filtro de visualización a las métricas para mostrar el total
 limpio; la captura 02 y la exportación JSON conservan los demás resultados.
