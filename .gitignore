@@ -194,5 +194,7 @@ cython_debug/
 data/
 mlruns/
 mlflow.db
+mlflow.db-*
+mlartifacts/
 models/*.joblib
 .DS_Store
