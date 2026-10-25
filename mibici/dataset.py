@@ -22,6 +22,7 @@ app = typer.Typer()
 TRIP_COLUMNS = ["Viaje_Id", "Inicio_del_viaje", "Fin_del_viaje", "Origen_Id", "Destino_Id"]
 CLEANING_RULES = [
     "Excluir viajes sin identificadores enteros positivos o sin fechas interpretables.",
+    "Interpretar fechas ISO como año-mes-día y fechas con barras como día/mes/año.",
     "Excluir viajes con fin anterior o igual al inicio.",
     "Conservar viajes cuyo inicio y fin pertenecen al año seleccionado.",
     "Eliminar duplicados coincidentes en las cinco columnas necesarias para contar viajes.",
@@ -41,6 +42,22 @@ def monthly_files(raw_dir: Path, year: int) -> list[Path]:
     return expected
 
 
+def parse_trip_timestamps(values: pd.Series) -> pd.Series:
+    """Noviembre de 2023 usa día/mes/año; no inferir el orden de fechas ambiguas."""
+    if pd.api.types.is_datetime64_any_dtype(values):
+        return values
+    text = values.astype("string").str.strip()
+    iso = text.str.match(r"^\d{4}-\d{2}-\d{2}(?:[ T]|$)", na=False)
+    slash = text.str.match(r"^\d{1,2}/\d{1,2}/\d{4}(?:\s|$)", na=False)
+    parsed = pd.to_datetime(text.where(iso), format="ISO8601", errors="coerce")
+    for date_format in ["%d/%m/%Y %H:%M", "%d/%m/%Y %H:%M:%S"]:
+        pending = slash & parsed.isna()
+        parsed.loc[pending] = pd.to_datetime(
+            text.loc[pending], format=date_format, errors="coerce"
+        )
+    return parsed
+
+
 def clean_trips(trips: pd.DataFrame, year: int) -> tuple[pd.DataFrame, dict]:
     """Aplica descartes secuenciales: cada fila eliminada se cuenta una sola vez."""
     missing = set(TRIP_COLUMNS) - set(trips.columns)
@@ -52,7 +69,7 @@ def clean_trips(trips: pd.DataFrame, year: int) -> tuple[pd.DataFrame, dict]:
     for col in ["Viaje_Id", "Origen_Id", "Destino_Id"]:
         trips[col] = pd.to_numeric(trips[col], errors="coerce")
     for col in ["Inicio_del_viaje", "Fin_del_viaje"]:
-        trips[col] = pd.to_datetime(trips[col], format="mixed", errors="coerce")
+        trips[col] = parse_trip_timestamps(trips[col])
 
     ids = trips[["Viaje_Id", "Origen_Id", "Destino_Id"]]
     valid_ids = (np.isfinite(ids) & (ids > 0) & (ids % 1 == 0)).all(axis=1)
@@ -125,8 +142,24 @@ def load_all_trips(raw_dir: Path, year: int, report: dict | None = None) -> pd.D
         frame.columns = frame.columns.str.strip()
         if frame.empty:
             raise ValueError(f"El archivo mensual está vacío: {path.name}")
+        missing = set(TRIP_COLUMNS) - set(frame.columns)
+        if missing:
+            raise ValueError(f"Faltan columnas en {path.name}: {sorted(missing)}")
+        for col in ["Inicio_del_viaje", "Fin_del_viaje"]:
+            frame[col] = parse_trip_timestamps(frame[col])
+        expected_month = int(path.stem[-2:])
+        starts = frame["Inicio_del_viaje"].dropna()
+        if not ((starts.dt.month == expected_month) & (starts.dt.year == year)).all():
+            raise ValueError(f"Hay inicios de viaje fuera del mes declarado en {path.name}")
         frames.append(frame)
-        inputs.append({**file_metadata(path), "filas": len(frame), "encoding": encoding})
+        inputs.append(
+            {
+                **file_metadata(path),
+                "filas": len(frame),
+                "encoding": encoding,
+                "mes_inicio_verificado": expected_month,
+            }
+        )
     cleaned, quality = clean_trips(pd.concat(frames, ignore_index=True), year)
     if cleaned["Inicio_del_viaje"].dt.month.nunique() != 12:
         raise ValueError("No hay viajes limpios en cada uno de los 12 meses; revisar cobertura.")

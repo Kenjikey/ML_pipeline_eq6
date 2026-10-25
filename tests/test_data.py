@@ -11,13 +11,19 @@ from typer.testing import CliRunner
 
 from mibici.config import MLFLOW_EXPERIMENT_NAME
 from mibici.dataset import app as dataset_app
-from mibici.dataset import build_hourly_grid, clean_trips, monthly_files
+from mibici.dataset import (
+    build_hourly_grid,
+    clean_trips,
+    monthly_files,
+    parse_trip_timestamps,
+)
 from mibici.features import (
     add_calendar_and_cyclical_features,
     add_historical_lags_and_rolling,
 )
 from mibici.features import app as features_app
 from mibici.features import validate_hourly_grid
+from mibici.plots import app as plots_app
 from mibici.tracking import file_metadata
 
 
@@ -65,6 +71,24 @@ def test_conflicting_trip_ids_stop_processing():
     rows = [trip(), trip(Destino_Id=3)]
     with pytest.raises(ValueError, match="movimientos distintos"):
         clean_trips(pd.DataFrame(rows), 2023)
+
+
+def test_dates_use_explicit_iso_or_day_month_year_order():
+    values = pd.Series(["01/11/2023 0:01", "15/11/2023 12:30:45", "2023-01-11 00:01:00"])
+    parsed = parse_trip_timestamps(values)
+    assert parsed.iloc[0] == pd.Timestamp("2023-11-01 00:01")
+    assert parsed.iloc[1] == pd.Timestamp("2023-11-15 12:30:45")
+    assert parsed.iloc[2] == pd.Timestamp("2023-01-11 00:01")
+    cleaned, report = clean_trips(
+        pd.DataFrame(
+            [
+                trip(Inicio_del_viaje="31/10/2023 23:59", Fin_del_viaje="01/11/2023 0:01"),
+            ]
+        ),
+        2023,
+    )
+    assert len(cleaned) == 1
+    assert report["duracion_segundos"]["min"] == 120
 
 
 def test_missing_month_is_not_imputed_as_zero(tmp_path):
@@ -154,11 +178,14 @@ def test_cli_pipeline_registers_two_finished_mlflow_runs(tmp_path):
             Inicio_del_viaje=f"2023-{month:02d}-01 00:00:00",
             Fin_del_viaje=f"2023-{month:02d}-01 00:30:00",
         )
+        if month == 11:
+            row.update(Inicio_del_viaje="01/11/2023 0:00", Fin_del_viaje="01/11/2023 0:30")
         pd.DataFrame([row]).to_csv(
             raw / f"datos_abiertos_2023_{month:02d}.csv", index=False, encoding="latin1"
         )
     hourly = tmp_path / "hourly.parquet"
     features = tmp_path / "features.parquet"
+    figures = tmp_path / "figures"
     reports = tmp_path / "reports"
     uri = f"sqlite:///{tmp_path / 'mlflow.db'}"
     previous_uri = mlflow.get_tracking_uri()
@@ -181,6 +208,9 @@ def test_cli_pipeline_registers_two_finished_mlflow_runs(tmp_path):
             ],
         )
         assert result.exit_code == 0, result.output + repr(result.exception)
+        grid = pd.read_parquet(hourly)
+        november = grid[(grid.estacion_id == 1) & (grid.timestamp == pd.Timestamp("2023-11-01"))]
+        assert november.salidas.iloc[0] == 1
         result = runner.invoke(
             features_app,
             [
@@ -192,8 +222,24 @@ def test_cli_pipeline_registers_two_finished_mlflow_runs(tmp_path):
             ],
         )
         assert result.exit_code == 0, result.output + repr(result.exception)
+        result = runner.invoke(
+            plots_app,
+            [
+                "--input-path",
+                str(hourly),
+                "--features-path",
+                str(features),
+                "--figures-dir",
+                str(figures),
+                "--station-id",
+                "1",
+                *common,
+            ],
+        )
+        assert result.exit_code == 0, result.output + repr(result.exception)
+        assert len(list(figures.glob("*.png"))) == 6
         runs = client.search_runs([experiment_id])
-        assert len(runs) == 2
+        assert len(runs) == 3
         assert all(run.info.status == "FINISHED" for run in runs)
         stages = {run.data.tags["etapa"]: run for run in runs}
         assert stages["dataset"].data.metrics["filas_limpias"] == 12
@@ -202,7 +248,12 @@ def test_cli_pipeline_registers_two_finished_mlflow_runs(tmp_path):
             assert run.inputs.dataset_inputs
             artifacts = client.list_artifacts(run.info.run_id, "calidad")
             assert len(artifacts) == 1
-            report = json.loads((reports / f"{stage}_{run.info.run_id}.json").read_text())
+            prefix = "resumen" if stage == "plots" else stage
+            report = json.loads((reports / f"{prefix}_{run.info.run_id}.json").read_text())
+            if stage == "plots":
+                assert report["metricas"]["salidas_total"] == 12
+                assert len(client.list_artifacts(run.info.run_id, "figuras")) == 6
+                continue
             output = hourly if stage == "dataset" else features
             assert report["salida"]["sha256"] == file_metadata(output)["sha256"]
     finally:

@@ -31,6 +31,8 @@ def data_run(stage: str, tracking_uri: str):
     with mlflow.start_run(run_name=stage) as run:
         mlflow.set_tag("etapa", stage)
         mlflow.set_tag("responsable_del_flujo", "Leo")
+        mlflow.set_tag("version_datos", "v2_fechas_explicitas")
+        mlflow.set_tag("uso_entrega", "oficial_fase1")
         # HEAD identifica código confirmado; los fuentes adjuntos incluyen cambios locales.
         for command, tag in [
             (["git", "rev-parse", "HEAD"], "codigo_commit"),
