@@ -1,0 +1,34 @@
+[
+  {
+    "id": "hourly_balance_2023_v1",
+    "archivo": "hourly_balance_2023.parquet",
+    "sha256": "c71e895271e7a17ffd556959cdd1ef516f258bfb8e5940470d5526c71a99ebd7",
+    "url": "https://drive.google.com/file/d/1cWA_uMNM8NTZAeXYohTE06nvVccs4jl-/view?usp=drive_link",
+    "origen": [
+      "raw_v1"
+    ],
+    "transformaciones": [
+      "Filtro de micro-viajes (<60s con mismo origen y destino)",
+      "Filtro de anomalias de retencion (>24 horas)",
+      "Agrupacion horaria de entradas y salidas por estacion",
+      "Construccion de grid continuo de 8,760 horas x 359 estaciones con imputacion determinista de 0"
+    ],
+    "commit": "6c82d9c"
+  },
+  {
+    "id": "features_2023_v1",
+    "archivo": "features_2023.parquet",
+    "sha256": "78c986ec35f62ca7707a40a6971cbd76b0d35c4dacdb15c5e61b283765bb20a4",
+    "url": "https://drive.google.com/file/d/1NPp8I0jYjjsoB7I7RMZGcYbgMv9Qdn-F/view?usp=sharing",
+    "origen": [
+      "hourly_balance_2023_v1"
+    ],
+    "transformaciones": [
+      "Generacion de variables ciclicas seno/coseno de hora y mes",
+      "Generacion de lags temporales (t-1h, t-2h, t-24h, t-168h)",
+      "Calculo de medias moviles de 6 horas",
+      "Banderas de dia laboral vs fin de semana"
+    ],
+    "commit": "6c82d9c"
+  }
+]

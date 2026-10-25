@@ -21,6 +21,15 @@ MODELS_DIR = PROJ_ROOT / "models"
 REPORTS_DIR = PROJ_ROOT / "reports"
 FIGURES_DIR = REPORTS_DIR / "figures"
 
+# Ensure output directories exist
+for directory in [INTERIM_DATA_DIR, PROCESSED_DATA_DIR, EXTERNAL_DATA_DIR, MODELS_DIR, FIGURES_DIR]:
+    directory.mkdir(parents=True, exist_ok=True)
+
+# Project Parameters - MiBici 2023
+TARGET_YEAR = 2023
+MLFLOW_TRACKING_URI = "http://localhost:5001"
+MLFLOW_EXPERIMENT_NAME = "mibici_balance_estaciones_2023"
+
 # If tqdm is installed, configure loguru with tqdm.write
 # https://github.com/Delgan/loguru/issues/135
 try:

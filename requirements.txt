@@ -14,4 +14,8 @@ python-dotenv
 scikit-learn
 tqdm
 typer
+joblib
+mlflow
+pyarrow
+seaborn
 -e .
