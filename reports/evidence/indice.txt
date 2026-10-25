@@ -1,0 +1,26 @@
+EVIDENCIA DE FASE 1 — VERSIÓN V2
+
+Todas las capturas proceden de la interfaz real, sin reconstrucciones.
+
+00_archivos_drive.jpg: los dos Parquet versionados, con las cargas completadas.
+mlflow/01_ejecuciones_oficiales.jpg: las tres ejecuciones oficiales filtradas.
+mlflow/02_limpieza_metricas.jpg: filas originales, descartes y viajes conservados.
+mlflow/03_limpieza_parametros.jpg: parámetros de limpieza, versión y commit del código.
+mlflow/04_preparacion_metricas.jpg: filas preparadas, 33 columnas y cero nulos.
+mlflow/05_datasets.jpg: dataset horario de entrada y dataset preparado de salida.
+mlflow/06_eda_metricas.jpg: métricas descriptivas y ejecución finalizada del EDA.
+mlflow/07_artefactos_eda.jpg: seis gráficas, manifiestos y una figura visible en MLflow.
+
+mlflow/ejecuciones_oficiales.json: exportación de parámetros, métricas, tags, datasets
+y artefactos de las tres ejecuciones, obtenida mediante la API local de MLflow.
+verificacion_drive.json: comprobación SHA-256 mediante descarga pública de ambos
+Parquet desde Drive, sin autenticación y sin guardar copias adicionales.
+
+La captura 03 aplica un filtro de visualización a las métricas para mostrar el total
+limpio; la captura 02 y la exportación JSON conservan los demás resultados.
+El código del EDA se ejecutó desde el notebook: por eso su fuente en MLflow aparece
+como ipykernel_launcher.py. El script reutilizable plots.py queda adjunto como artefacto.
+
+Las huellas cortas que muestra MLflow corresponden a los dataframes; las huellas
+SHA-256 completas de los archivos están en manifests/mibici_processed_v2.json.
+Las métricas de este registro describen calidad y EDA; no son métricas de modelos nuevos.

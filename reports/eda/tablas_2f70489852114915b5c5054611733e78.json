@@ -1,0 +1,3411 @@
+{
+  "estadisticas": [
+    {
+      "variable": "entradas",
+      "count": 3144840.0,
+      "mean": 1.359422101,
+      "std": 2.6971864549,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.0,
+      "75%": 2.0,
+      "max": 109.0
+    },
+    {
+      "variable": "salidas",
+      "count": 3144840.0,
+      "mean": 1.359422101,
+      "std": 2.5730771388,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.0,
+      "75%": 2.0,
+      "max": 91.0
+    },
+    {
+      "variable": "balance",
+      "count": 3144840.0,
+      "mean": 0.0,
+      "std": 1.9238574044,
+      "min": -76.0,
+      "25%": 0.0,
+      "50%": 0.0,
+      "75%": 0.0,
+      "max": 83.0
+    }
+  ],
+  "flujo_horario": [
+    {
+      "hora": 0,
+      "es_fin_semana": 0,
+      "entradas": 0.1872187701,
+      "salidas": 0.1598135847
+    },
+    {
+      "hora": 0,
+      "es_fin_semana": 1,
+      "entradas": 0.3221116859,
+      "salidas": 0.3131184507
+    },
+    {
+      "hora": 1,
+      "es_fin_semana": 0,
+      "entradas": 0.0250910649,
+      "salidas": 2.1427e-05
+    },
+    {
+      "hora": 1,
+      "es_fin_semana": 1,
+      "entradas": 0.0652341159,
+      "salidas": 0.0001061149
+    },
+    {
+      "hora": 2,
+      "es_fin_semana": 0,
+      "entradas": 0.0003321191,
+      "salidas": 0.0
+    },
+    {
+      "hora": 2,
+      "es_fin_semana": 1,
+      "entradas": 0.0005836318,
+      "salidas": 0.0
+    },
+    {
+      "hora": 3,
+      "es_fin_semana": 0,
+      "entradas": 0.0001714163,
+      "salidas": 0.0
+    },
+    {
+      "hora": 3,
+      "es_fin_semana": 1,
+      "entradas": 0.0003183446,
+      "salidas": 0.0
+    },
+    {
+      "hora": 4,
+      "es_fin_semana": 0,
+      "entradas": 0.000246411,
+      "salidas": 0.0002356975
+    },
+    {
+      "hora": 4,
+      "es_fin_semana": 1,
+      "entradas": 0.0003448733,
+      "salidas": 0.0003448733
+    },
+    {
+      "hora": 5,
+      "es_fin_semana": 0,
+      "entradas": 0.1690914935,
+      "salidas": 0.230115706
+    },
+    {
+      "hora": 5,
+      "es_fin_semana": 1,
+      "entradas": 0.0770924526,
+      "salidas": 0.100331609
+    },
+    {
+      "hora": 6,
+      "es_fin_semana": 0,
+      "entradas": 0.919905721,
+      "salidas": 1.0955646025
+    },
+    {
+      "hora": 6,
+      "es_fin_semana": 1,
+      "entradas": 0.2901445815,
+      "salidas": 0.338055445
+    },
+    {
+      "hora": 7,
+      "es_fin_semana": 0,
+      "entradas": 1.955496036,
+      "salidas": 2.1810799229
+    },
+    {
+      "hora": 7,
+      "es_fin_semana": 1,
+      "entradas": 0.6192067914,
+      "salidas": 0.689163019
+    },
+    {
+      "hora": 8,
+      "es_fin_semana": 0,
+      "entradas": 3.0388365117,
+      "salidas": 3.1767409471
+    },
+    {
+      "hora": 8,
+      "es_fin_semana": 1,
+      "entradas": 1.0201087677,
+      "salidas": 1.1393818809
+    },
+    {
+      "hora": 9,
+      "es_fin_semana": 0,
+      "entradas": 2.3433040497,
+      "salidas": 2.054178273
+    },
+    {
+      "hora": 9,
+      "es_fin_semana": 1,
+      "entradas": 1.3397532829,
+      "salidas": 1.4180660565
+    },
+    {
+      "hora": 10,
+      "es_fin_semana": 0,
+      "entradas": 1.6051639169,
+      "salidas": 1.5586565245
+    },
+    {
+      "hora": 10,
+      "es_fin_semana": 1,
+      "entradas": 1.6195781934,
+      "salidas": 1.668603263
+    },
+    {
+      "hora": 11,
+      "es_fin_semana": 0,
+      "entradas": 1.4833940433,
+      "salidas": 1.4747482323
+    },
+    {
+      "hora": 11,
+      "es_fin_semana": 1,
+      "entradas": 1.7765751426,
+      "salidas": 1.8060485476
+    },
+    {
+      "hora": 12,
+      "es_fin_semana": 0,
+      "entradas": 1.5508249411,
+      "salidas": 1.5851939147
+    },
+    {
+      "hora": 12,
+      "es_fin_semana": 1,
+      "entradas": 1.8846266083,
+      "salidas": 1.8957156122
+    },
+    {
+      "hora": 13,
+      "es_fin_semana": 0,
+      "entradas": 1.8754553246,
+      "salidas": 1.916488108
+    },
+    {
+      "hora": 13,
+      "es_fin_semana": 1,
+      "entradas": 2.0564796392,
+      "salidas": 2.0043772384
+    },
+    {
+      "hora": 14,
+      "es_fin_semana": 0,
+      "entradas": 2.2100599957,
+      "salidas": 2.2451682023
+    },
+    {
+      "hora": 14,
+      "es_fin_semana": 1,
+      "entradas": 1.9425122695,
+      "salidas": 1.8715214219
+    },
+    {
+      "hora": 15,
+      "es_fin_semana": 0,
+      "entradas": 2.4168095136,
+      "salidas": 2.4239661453
+    },
+    {
+      "hora": 15,
+      "es_fin_semana": 1,
+      "entradas": 1.6184374585,
+      "salidas": 1.5668921608
+    },
+    {
+      "hora": 16,
+      "es_fin_semana": 0,
+      "entradas": 2.2598457253,
+      "salidas": 2.2736554532
+    },
+    {
+      "hora": 16,
+      "es_fin_semana": 1,
+      "entradas": 1.3287969227,
+      "salidas": 1.2955564398
+    },
+    {
+      "hora": 17,
+      "es_fin_semana": 0,
+      "entradas": 2.7793657596,
+      "salidas": 2.9388365117
+    },
+    {
+      "hora": 17,
+      "es_fin_semana": 1,
+      "entradas": 1.1885130654,
+      "salidas": 1.1803156917
+    },
+    {
+      "hora": 18,
+      "es_fin_semana": 0,
+      "entradas": 3.749753589,
+      "salidas": 3.8443754018
+    },
+    {
+      "hora": 18,
+      "es_fin_semana": 1,
+      "entradas": 1.2048282266,
+      "salidas": 1.2215147898
+    },
+    {
+      "hora": 19,
+      "es_fin_semana": 0,
+      "entradas": 3.0726483823,
+      "salidas": 2.8546282408
+    },
+    {
+      "hora": 19,
+      "es_fin_semana": 1,
+      "entradas": 1.2469558297,
+      "salidas": 1.2298713357
+    },
+    {
+      "hora": 20,
+      "es_fin_semana": 0,
+      "entradas": 2.0938932933,
+      "salidas": 1.958913649
+    },
+    {
+      "hora": 20,
+      "es_fin_semana": 1,
+      "entradas": 1.1735508688,
+      "salidas": 1.1499137817
+    },
+    {
+      "hora": 21,
+      "es_fin_semana": 0,
+      "entradas": 1.5272873366,
+      "salidas": 1.4334154703
+    },
+    {
+      "hora": 21,
+      "es_fin_semana": 1,
+      "entradas": 0.9870539859,
+      "salidas": 0.9424326834
+    },
+    {
+      "hora": 22,
+      "es_fin_semana": 0,
+      "entradas": 0.8879472895,
+      "salidas": 0.7894578959
+    },
+    {
+      "hora": 22,
+      "es_fin_semana": 1,
+      "entradas": 0.6740151214,
+      "salidas": 0.6135031171
+    },
+    {
+      "hora": 23,
+      "es_fin_semana": 0,
+      "entradas": 0.4296443111,
+      "salidas": 0.3944718234
+    },
+    {
+      "hora": 23,
+      "es_fin_semana": 1,
+      "entradas": 0.3943493832,
+      "salidas": 0.366679931
+    }
+  ],
+  "dias_semana": [
+    {
+      "dia_semana": 0,
+      "entradas_total": 641531,
+      "salidas_total": 641661,
+      "entradas_media_diaria": 12337.1346153846,
+      "salidas_media_diaria": 12339.6346153846,
+      "dias_observados": 52,
+      "nombre_dia": "Lunes"
+    },
+    {
+      "dia_semana": 1,
+      "entradas_total": 707855,
+      "salidas_total": 708080,
+      "entradas_media_diaria": 13612.5961538462,
+      "salidas_media_diaria": 13616.9230769231,
+      "dias_observados": 52,
+      "nombre_dia": "Martes"
+    },
+    {
+      "dia_semana": 2,
+      "entradas_total": 708019,
+      "salidas_total": 708081,
+      "entradas_media_diaria": 13615.75,
+      "salidas_media_diaria": 13616.9423076923,
+      "dias_observados": 52,
+      "nombre_dia": "Miércoles"
+    },
+    {
+      "dia_semana": 3,
+      "entradas_total": 692342,
+      "salidas_total": 692468,
+      "entradas_media_diaria": 13314.2692307692,
+      "salidas_media_diaria": 13316.6923076923,
+      "dias_observados": 52,
+      "nombre_dia": "Jueves"
+    },
+    {
+      "dia_semana": 4,
+      "entradas_total": 664797,
+      "salidas_total": 664995,
+      "entradas_media_diaria": 12784.5576923077,
+      "salidas_media_diaria": 12788.3653846154,
+      "dias_observados": 52,
+      "nombre_dia": "Viernes"
+    },
+    {
+      "dia_semana": 5,
+      "entradas_total": 463653,
+      "salidas_total": 463614,
+      "entradas_media_diaria": 8916.4038461538,
+      "salidas_media_diaria": 8915.6538461538,
+      "dias_observados": 52,
+      "nombre_dia": "Sábado"
+    },
+    {
+      "dia_semana": 6,
+      "entradas_total": 396968,
+      "salidas_total": 396266,
+      "entradas_media_diaria": 7489.9622641509,
+      "salidas_media_diaria": 7476.7169811321,
+      "dias_observados": 53,
+      "nombre_dia": "Domingo"
+    }
+  ],
+  "meses": [
+    {
+      "mes": 1,
+      "entradas_total": 365475,
+      "salidas_total": 365497,
+      "salidas_media_diaria": 11790.2258064516,
+      "dias_observados": 31
+    },
+    {
+      "mes": 2,
+      "entradas_total": 354719,
+      "salidas_total": 354718,
+      "salidas_media_diaria": 12668.5,
+      "dias_observados": 28
+    },
+    {
+      "mes": 3,
+      "entradas_total": 401840,
+      "salidas_total": 401853,
+      "salidas_media_diaria": 12963.0,
+      "dias_observados": 31
+    },
+    {
+      "mes": 4,
+      "entradas_total": 332694,
+      "salidas_total": 332679,
+      "salidas_media_diaria": 11089.3,
+      "dias_observados": 30
+    },
+    {
+      "mes": 5,
+      "entradas_total": 363254,
+      "salidas_total": 363262,
+      "salidas_media_diaria": 11718.1290322581,
+      "dias_observados": 31
+    },
+    {
+      "mes": 6,
+      "entradas_total": 338850,
+      "salidas_total": 338850,
+      "salidas_media_diaria": 11295.0,
+      "dias_observados": 30
+    },
+    {
+      "mes": 7,
+      "entradas_total": 331005,
+      "salidas_total": 331002,
+      "salidas_media_diaria": 10677.4838709677,
+      "dias_observados": 31
+    },
+    {
+      "mes": 8,
+      "entradas_total": 353918,
+      "salidas_total": 353912,
+      "salidas_media_diaria": 11416.5161290323,
+      "dias_observados": 31
+    },
+    {
+      "mes": 9,
+      "entradas_total": 362897,
+      "salidas_total": 362900,
+      "salidas_media_diaria": 12096.6666666667,
+      "dias_observados": 30
+    },
+    {
+      "mes": 10,
+      "entradas_total": 382211,
+      "salidas_total": 382207,
+      "salidas_media_diaria": 12329.2580645161,
+      "dias_observados": 31
+    },
+    {
+      "mes": 11,
+      "entradas_total": 375045,
+      "salidas_total": 375062,
+      "salidas_media_diaria": 12502.0666666667,
+      "dias_observados": 30
+    },
+    {
+      "mes": 12,
+      "entradas_total": 313257,
+      "salidas_total": 313223,
+      "salidas_media_diaria": 10103.9677419355,
+      "dias_observados": 31
+    }
+  ],
+  "estaciones": [
+    {
+      "estacion_id": 51,
+      "total_entradas": 116081,
+      "total_salidas": 95333,
+      "balance_neto": 20748,
+      "desbalance_absoluto": 76910
+    },
+    {
+      "estacion_id": 34,
+      "total_entradas": 52276,
+      "total_salidas": 36622,
+      "balance_neto": 15654,
+      "desbalance_absoluto": 25482
+    },
+    {
+      "estacion_id": 11,
+      "total_entradas": 62597,
+      "total_salidas": 66958,
+      "balance_neto": -4361,
+      "desbalance_absoluto": 24111
+    },
+    {
+      "estacion_id": 194,
+      "total_entradas": 26827,
+      "total_salidas": 40931,
+      "balance_neto": -14104,
+      "desbalance_absoluto": 22064
+    },
+    {
+      "estacion_id": 271,
+      "total_entradas": 64059,
+      "total_salidas": 66520,
+      "balance_neto": -2461,
+      "desbalance_absoluto": 21553
+    },
+    {
+      "estacion_id": 50,
+      "total_entradas": 59813,
+      "total_salidas": 57317,
+      "balance_neto": 2496,
+      "desbalance_absoluto": 21074
+    },
+    {
+      "estacion_id": 52,
+      "total_entradas": 61042,
+      "total_salidas": 60434,
+      "balance_neto": 608,
+      "desbalance_absoluto": 20830
+    },
+    {
+      "estacion_id": 42,
+      "total_entradas": 27856,
+      "total_salidas": 21079,
+      "balance_neto": 6777,
+      "desbalance_absoluto": 20355
+    },
+    {
+      "estacion_id": 65,
+      "total_entradas": 30671,
+      "total_salidas": 33674,
+      "balance_neto": -3003,
+      "desbalance_absoluto": 20337
+    },
+    {
+      "estacion_id": 35,
+      "total_entradas": 72513,
+      "total_salidas": 63364,
+      "balance_neto": 9149,
+      "desbalance_absoluto": 19725
+    },
+    {
+      "estacion_id": 54,
+      "total_entradas": 56935,
+      "total_salidas": 52523,
+      "balance_neto": 4412,
+      "desbalance_absoluto": 19494
+    },
+    {
+      "estacion_id": 160,
+      "total_entradas": 27992,
+      "total_salidas": 28618,
+      "balance_neto": -626,
+      "desbalance_absoluto": 19202
+    },
+    {
+      "estacion_id": 58,
+      "total_entradas": 46114,
+      "total_salidas": 38366,
+      "balance_neto": 7748,
+      "desbalance_absoluto": 19018
+    },
+    {
+      "estacion_id": 38,
+      "total_entradas": 39396,
+      "total_salidas": 36794,
+      "balance_neto": 2602,
+      "desbalance_absoluto": 18984
+    },
+    {
+      "estacion_id": 260,
+      "total_entradas": 46086,
+      "total_salidas": 35981,
+      "balance_neto": 10105,
+      "desbalance_absoluto": 17709
+    },
+    {
+      "estacion_id": 291,
+      "total_entradas": 25421,
+      "total_salidas": 21186,
+      "balance_neto": 4235,
+      "desbalance_absoluto": 17045
+    },
+    {
+      "estacion_id": 196,
+      "total_entradas": 23404,
+      "total_salidas": 30704,
+      "balance_neto": -7300,
+      "desbalance_absoluto": 16942
+    },
+    {
+      "estacion_id": 199,
+      "total_entradas": 23229,
+      "total_salidas": 27899,
+      "balance_neto": -4670,
+      "desbalance_absoluto": 16760
+    },
+    {
+      "estacion_id": 69,
+      "total_entradas": 33260,
+      "total_salidas": 33069,
+      "balance_neto": 191,
+      "desbalance_absoluto": 16495
+    },
+    {
+      "estacion_id": 273,
+      "total_entradas": 38752,
+      "total_salidas": 31925,
+      "balance_neto": 6827,
+      "desbalance_absoluto": 16245
+    },
+    {
+      "estacion_id": 173,
+      "total_entradas": 31692,
+      "total_salidas": 30595,
+      "balance_neto": 1097,
+      "desbalance_absoluto": 16231
+    },
+    {
+      "estacion_id": 66,
+      "total_entradas": 32100,
+      "total_salidas": 32679,
+      "balance_neto": -579,
+      "desbalance_absoluto": 16171
+    },
+    {
+      "estacion_id": 56,
+      "total_entradas": 40324,
+      "total_salidas": 31385,
+      "balance_neto": 8939,
+      "desbalance_absoluto": 16019
+    },
+    {
+      "estacion_id": 157,
+      "total_entradas": 34001,
+      "total_salidas": 33739,
+      "balance_neto": 262,
+      "desbalance_absoluto": 15666
+    },
+    {
+      "estacion_id": 154,
+      "total_entradas": 20887,
+      "total_salidas": 21675,
+      "balance_neto": -788,
+      "desbalance_absoluto": 15622
+    },
+    {
+      "estacion_id": 86,
+      "total_entradas": 25848,
+      "total_salidas": 26489,
+      "balance_neto": -641,
+      "desbalance_absoluto": 15285
+    },
+    {
+      "estacion_id": 32,
+      "total_entradas": 19573,
+      "total_salidas": 23433,
+      "balance_neto": -3860,
+      "desbalance_absoluto": 15262
+    },
+    {
+      "estacion_id": 272,
+      "total_entradas": 29549,
+      "total_salidas": 29168,
+      "balance_neto": 381,
+      "desbalance_absoluto": 14917
+    },
+    {
+      "estacion_id": 268,
+      "total_entradas": 31836,
+      "total_salidas": 27065,
+      "balance_neto": 4771,
+      "desbalance_absoluto": 14727
+    },
+    {
+      "estacion_id": 64,
+      "total_entradas": 26595,
+      "total_salidas": 25261,
+      "balance_neto": 1334,
+      "desbalance_absoluto": 14562
+    },
+    {
+      "estacion_id": 170,
+      "total_entradas": 22728,
+      "total_salidas": 24041,
+      "balance_neto": -1313,
+      "desbalance_absoluto": 14299
+    },
+    {
+      "estacion_id": 75,
+      "total_entradas": 37335,
+      "total_salidas": 36395,
+      "balance_neto": 940,
+      "desbalance_absoluto": 14226
+    },
+    {
+      "estacion_id": 21,
+      "total_entradas": 27810,
+      "total_salidas": 29815,
+      "balance_neto": -2005,
+      "desbalance_absoluto": 14137
+    },
+    {
+      "estacion_id": 171,
+      "total_entradas": 30268,
+      "total_salidas": 29016,
+      "balance_neto": 1252,
+      "desbalance_absoluto": 14116
+    },
+    {
+      "estacion_id": 4,
+      "total_entradas": 23765,
+      "total_salidas": 25883,
+      "balance_neto": -2118,
+      "desbalance_absoluto": 14078
+    },
+    {
+      "estacion_id": 70,
+      "total_entradas": 20468,
+      "total_salidas": 21074,
+      "balance_neto": -606,
+      "desbalance_absoluto": 14034
+    },
+    {
+      "estacion_id": 28,
+      "total_entradas": 32286,
+      "total_salidas": 31874,
+      "balance_neto": 412,
+      "desbalance_absoluto": 13936
+    },
+    {
+      "estacion_id": 165,
+      "total_entradas": 20969,
+      "total_salidas": 21706,
+      "balance_neto": -737,
+      "desbalance_absoluto": 13897
+    },
+    {
+      "estacion_id": 182,
+      "total_entradas": 23133,
+      "total_salidas": 24239,
+      "balance_neto": -1106,
+      "desbalance_absoluto": 13852
+    },
+    {
+      "estacion_id": 281,
+      "total_entradas": 20130,
+      "total_salidas": 22882,
+      "balance_neto": -2752,
+      "desbalance_absoluto": 13798
+    },
+    {
+      "estacion_id": 63,
+      "total_entradas": 28290,
+      "total_salidas": 28348,
+      "balance_neto": -58,
+      "desbalance_absoluto": 13784
+    },
+    {
+      "estacion_id": 195,
+      "total_entradas": 13398,
+      "total_salidas": 18370,
+      "balance_neto": -4972,
+      "desbalance_absoluto": 13720
+    },
+    {
+      "estacion_id": 156,
+      "total_entradas": 23506,
+      "total_salidas": 23940,
+      "balance_neto": -434,
+      "desbalance_absoluto": 13492
+    },
+    {
+      "estacion_id": 53,
+      "total_entradas": 31768,
+      "total_salidas": 30271,
+      "balance_neto": 1497,
+      "desbalance_absoluto": 13407
+    },
+    {
+      "estacion_id": 303,
+      "total_entradas": 15337,
+      "total_salidas": 19532,
+      "balance_neto": -4195,
+      "desbalance_absoluto": 13367
+    },
+    {
+      "estacion_id": 256,
+      "total_entradas": 30485,
+      "total_salidas": 28061,
+      "balance_neto": 2424,
+      "desbalance_absoluto": 13346
+    },
+    {
+      "estacion_id": 80,
+      "total_entradas": 27032,
+      "total_salidas": 24200,
+      "balance_neto": 2832,
+      "desbalance_absoluto": 13158
+    },
+    {
+      "estacion_id": 16,
+      "total_entradas": 28546,
+      "total_salidas": 29891,
+      "balance_neto": -1345,
+      "desbalance_absoluto": 13127
+    },
+    {
+      "estacion_id": 62,
+      "total_entradas": 22852,
+      "total_salidas": 22608,
+      "balance_neto": 244,
+      "desbalance_absoluto": 13066
+    },
+    {
+      "estacion_id": 257,
+      "total_entradas": 25658,
+      "total_salidas": 24181,
+      "balance_neto": 1477,
+      "desbalance_absoluto": 13041
+    },
+    {
+      "estacion_id": 12,
+      "total_entradas": 24982,
+      "total_salidas": 24346,
+      "balance_neto": 636,
+      "desbalance_absoluto": 12954
+    },
+    {
+      "estacion_id": 36,
+      "total_entradas": 28252,
+      "total_salidas": 25656,
+      "balance_neto": 2596,
+      "desbalance_absoluto": 12946
+    },
+    {
+      "estacion_id": 247,
+      "total_entradas": 21750,
+      "total_salidas": 14024,
+      "balance_neto": 7726,
+      "desbalance_absoluto": 12932
+    },
+    {
+      "estacion_id": 188,
+      "total_entradas": 14973,
+      "total_salidas": 19361,
+      "balance_neto": -4388,
+      "desbalance_absoluto": 12790
+    },
+    {
+      "estacion_id": 179,
+      "total_entradas": 20241,
+      "total_salidas": 22072,
+      "balance_neto": -1831,
+      "desbalance_absoluto": 12729
+    },
+    {
+      "estacion_id": 180,
+      "total_entradas": 16830,
+      "total_salidas": 17928,
+      "balance_neto": -1098,
+      "desbalance_absoluto": 12640
+    },
+    {
+      "estacion_id": 17,
+      "total_entradas": 25021,
+      "total_salidas": 26493,
+      "balance_neto": -1472,
+      "desbalance_absoluto": 12636
+    },
+    {
+      "estacion_id": 46,
+      "total_entradas": 14716,
+      "total_salidas": 17971,
+      "balance_neto": -3255,
+      "desbalance_absoluto": 12591
+    },
+    {
+      "estacion_id": 269,
+      "total_entradas": 17550,
+      "total_salidas": 11946,
+      "balance_neto": 5604,
+      "desbalance_absoluto": 12520
+    },
+    {
+      "estacion_id": 288,
+      "total_entradas": 18147,
+      "total_salidas": 23217,
+      "balance_neto": -5070,
+      "desbalance_absoluto": 12500
+    },
+    {
+      "estacion_id": 263,
+      "total_entradas": 21947,
+      "total_salidas": 16702,
+      "balance_neto": 5245,
+      "desbalance_absoluto": 12483
+    },
+    {
+      "estacion_id": 327,
+      "total_entradas": 15793,
+      "total_salidas": 8229,
+      "balance_neto": 7564,
+      "desbalance_absoluto": 12460
+    },
+    {
+      "estacion_id": 85,
+      "total_entradas": 27251,
+      "total_salidas": 25034,
+      "balance_neto": 2217,
+      "desbalance_absoluto": 12423
+    },
+    {
+      "estacion_id": 24,
+      "total_entradas": 18069,
+      "total_salidas": 18459,
+      "balance_neto": -390,
+      "desbalance_absoluto": 12400
+    },
+    {
+      "estacion_id": 68,
+      "total_entradas": 13345,
+      "total_salidas": 14336,
+      "balance_neto": -991,
+      "desbalance_absoluto": 12225
+    },
+    {
+      "estacion_id": 2,
+      "total_entradas": 25921,
+      "total_salidas": 23797,
+      "balance_neto": 2124,
+      "desbalance_absoluto": 12170
+    },
+    {
+      "estacion_id": 27,
+      "total_entradas": 25828,
+      "total_salidas": 25288,
+      "balance_neto": 540,
+      "desbalance_absoluto": 12102
+    },
+    {
+      "estacion_id": 67,
+      "total_entradas": 13674,
+      "total_salidas": 16189,
+      "balance_neto": -2515,
+      "desbalance_absoluto": 12091
+    },
+    {
+      "estacion_id": 163,
+      "total_entradas": 15122,
+      "total_salidas": 14765,
+      "balance_neto": 357,
+      "desbalance_absoluto": 12055
+    },
+    {
+      "estacion_id": 73,
+      "total_entradas": 26428,
+      "total_salidas": 26282,
+      "balance_neto": 146,
+      "desbalance_absoluto": 12044
+    },
+    {
+      "estacion_id": 78,
+      "total_entradas": 18882,
+      "total_salidas": 13531,
+      "balance_neto": 5351,
+      "desbalance_absoluto": 12005
+    },
+    {
+      "estacion_id": 79,
+      "total_entradas": 19531,
+      "total_salidas": 19723,
+      "balance_neto": -192,
+      "desbalance_absoluto": 11966
+    },
+    {
+      "estacion_id": 276,
+      "total_entradas": 15607,
+      "total_salidas": 12733,
+      "balance_neto": 2874,
+      "desbalance_absoluto": 11962
+    },
+    {
+      "estacion_id": 30,
+      "total_entradas": 19258,
+      "total_salidas": 19999,
+      "balance_neto": -741,
+      "desbalance_absoluto": 11887
+    },
+    {
+      "estacion_id": 255,
+      "total_entradas": 17475,
+      "total_salidas": 18647,
+      "balance_neto": -1172,
+      "desbalance_absoluto": 11820
+    },
+    {
+      "estacion_id": 49,
+      "total_entradas": 20906,
+      "total_salidas": 21751,
+      "balance_neto": -845,
+      "desbalance_absoluto": 11783
+    },
+    {
+      "estacion_id": 5,
+      "total_entradas": 17891,
+      "total_salidas": 17765,
+      "balance_neto": 126,
+      "desbalance_absoluto": 11704
+    },
+    {
+      "estacion_id": 158,
+      "total_entradas": 19641,
+      "total_salidas": 17548,
+      "balance_neto": 2093,
+      "desbalance_absoluto": 11699
+    },
+    {
+      "estacion_id": 175,
+      "total_entradas": 21219,
+      "total_salidas": 17940,
+      "balance_neto": 3279,
+      "desbalance_absoluto": 11575
+    },
+    {
+      "estacion_id": 26,
+      "total_entradas": 21298,
+      "total_salidas": 21853,
+      "balance_neto": -555,
+      "desbalance_absoluto": 11557
+    },
+    {
+      "estacion_id": 197,
+      "total_entradas": 12570,
+      "total_salidas": 16754,
+      "balance_neto": -4184,
+      "desbalance_absoluto": 11546
+    },
+    {
+      "estacion_id": 45,
+      "total_entradas": 19074,
+      "total_salidas": 20580,
+      "balance_neto": -1506,
+      "desbalance_absoluto": 11452
+    },
+    {
+      "estacion_id": 10,
+      "total_entradas": 17608,
+      "total_salidas": 16923,
+      "balance_neto": 685,
+      "desbalance_absoluto": 11369
+    },
+    {
+      "estacion_id": 9,
+      "total_entradas": 19223,
+      "total_salidas": 16570,
+      "balance_neto": 2653,
+      "desbalance_absoluto": 11329
+    },
+    {
+      "estacion_id": 23,
+      "total_entradas": 19354,
+      "total_salidas": 20095,
+      "balance_neto": -741,
+      "desbalance_absoluto": 11255
+    },
+    {
+      "estacion_id": 198,
+      "total_entradas": 12064,
+      "total_salidas": 15934,
+      "balance_neto": -3870,
+      "desbalance_absoluto": 11248
+    },
+    {
+      "estacion_id": 323,
+      "total_entradas": 15557,
+      "total_salidas": 10903,
+      "balance_neto": 4654,
+      "desbalance_absoluto": 11232
+    },
+    {
+      "estacion_id": 47,
+      "total_entradas": 8844,
+      "total_salidas": 12350,
+      "balance_neto": -3506,
+      "desbalance_absoluto": 11204
+    },
+    {
+      "estacion_id": 72,
+      "total_entradas": 20369,
+      "total_salidas": 20389,
+      "balance_neto": -20,
+      "desbalance_absoluto": 11156
+    },
+    {
+      "estacion_id": 296,
+      "total_entradas": 20171,
+      "total_salidas": 14889,
+      "balance_neto": 5282,
+      "desbalance_absoluto": 11116
+    },
+    {
+      "estacion_id": 33,
+      "total_entradas": 22457,
+      "total_salidas": 23568,
+      "balance_neto": -1111,
+      "desbalance_absoluto": 10991
+    },
+    {
+      "estacion_id": 40,
+      "total_entradas": 20743,
+      "total_salidas": 21200,
+      "balance_neto": -457,
+      "desbalance_absoluto": 10981
+    },
+    {
+      "estacion_id": 275,
+      "total_entradas": 16826,
+      "total_salidas": 15118,
+      "balance_neto": 1708,
+      "desbalance_absoluto": 10972
+    },
+    {
+      "estacion_id": 81,
+      "total_entradas": 18474,
+      "total_salidas": 16544,
+      "balance_neto": 1930,
+      "desbalance_absoluto": 10906
+    },
+    {
+      "estacion_id": 43,
+      "total_entradas": 15908,
+      "total_salidas": 17130,
+      "balance_neto": -1222,
+      "desbalance_absoluto": 10876
+    },
+    {
+      "estacion_id": 200,
+      "total_entradas": 11556,
+      "total_salidas": 14611,
+      "balance_neto": -3055,
+      "desbalance_absoluto": 10831
+    },
+    {
+      "estacion_id": 39,
+      "total_entradas": 18049,
+      "total_salidas": 18508,
+      "balance_neto": -459,
+      "desbalance_absoluto": 10795
+    },
+    {
+      "estacion_id": 203,
+      "total_entradas": 11427,
+      "total_salidas": 14499,
+      "balance_neto": -3072,
+      "desbalance_absoluto": 10702
+    },
+    {
+      "estacion_id": 265,
+      "total_entradas": 19885,
+      "total_salidas": 15666,
+      "balance_neto": 4219,
+      "desbalance_absoluto": 10701
+    },
+    {
+      "estacion_id": 19,
+      "total_entradas": 15394,
+      "total_salidas": 18363,
+      "balance_neto": -2969,
+      "desbalance_absoluto": 10675
+    },
+    {
+      "estacion_id": 164,
+      "total_entradas": 14222,
+      "total_salidas": 13954,
+      "balance_neto": 268,
+      "desbalance_absoluto": 10566
+    },
+    {
+      "estacion_id": 226,
+      "total_entradas": 20444,
+      "total_salidas": 20366,
+      "balance_neto": 78,
+      "desbalance_absoluto": 10562
+    },
+    {
+      "estacion_id": 168,
+      "total_entradas": 14912,
+      "total_salidas": 16869,
+      "balance_neto": -1957,
+      "desbalance_absoluto": 10551
+    },
+    {
+      "estacion_id": 84,
+      "total_entradas": 17445,
+      "total_salidas": 18167,
+      "balance_neto": -722,
+      "desbalance_absoluto": 10490
+    },
+    {
+      "estacion_id": 3,
+      "total_entradas": 15235,
+      "total_salidas": 17589,
+      "balance_neto": -2354,
+      "desbalance_absoluto": 10470
+    },
+    {
+      "estacion_id": 74,
+      "total_entradas": 14553,
+      "total_salidas": 15700,
+      "balance_neto": -1147,
+      "desbalance_absoluto": 10463
+    },
+    {
+      "estacion_id": 178,
+      "total_entradas": 16432,
+      "total_salidas": 10503,
+      "balance_neto": 5929,
+      "desbalance_absoluto": 10463
+    },
+    {
+      "estacion_id": 254,
+      "total_entradas": 16320,
+      "total_salidas": 18378,
+      "balance_neto": -2058,
+      "desbalance_absoluto": 10416
+    },
+    {
+      "estacion_id": 262,
+      "total_entradas": 17892,
+      "total_salidas": 16780,
+      "balance_neto": 1112,
+      "desbalance_absoluto": 10324
+    },
+    {
+      "estacion_id": 174,
+      "total_entradas": 17043,
+      "total_salidas": 15582,
+      "balance_neto": 1461,
+      "desbalance_absoluto": 10293
+    },
+    {
+      "estacion_id": 259,
+      "total_entradas": 15562,
+      "total_salidas": 14839,
+      "balance_neto": 723,
+      "desbalance_absoluto": 10259
+    },
+    {
+      "estacion_id": 172,
+      "total_entradas": 18073,
+      "total_salidas": 15882,
+      "balance_neto": 2191,
+      "desbalance_absoluto": 10205
+    },
+    {
+      "estacion_id": 161,
+      "total_entradas": 17386,
+      "total_salidas": 18667,
+      "balance_neto": -1281,
+      "desbalance_absoluto": 10193
+    },
+    {
+      "estacion_id": 71,
+      "total_entradas": 14483,
+      "total_salidas": 15646,
+      "balance_neto": -1163,
+      "desbalance_absoluto": 10137
+    },
+    {
+      "estacion_id": 181,
+      "total_entradas": 13349,
+      "total_salidas": 11331,
+      "balance_neto": 2018,
+      "desbalance_absoluto": 10010
+    },
+    {
+      "estacion_id": 61,
+      "total_entradas": 14824,
+      "total_salidas": 14988,
+      "balance_neto": -164,
+      "desbalance_absoluto": 9978
+    },
+    {
+      "estacion_id": 41,
+      "total_entradas": 12954,
+      "total_salidas": 13711,
+      "balance_neto": -757,
+      "desbalance_absoluto": 9977
+    },
+    {
+      "estacion_id": 253,
+      "total_entradas": 16325,
+      "total_salidas": 19163,
+      "balance_neto": -2838,
+      "desbalance_absoluto": 9940
+    },
+    {
+      "estacion_id": 283,
+      "total_entradas": 19376,
+      "total_salidas": 18591,
+      "balance_neto": 785,
+      "desbalance_absoluto": 9933
+    },
+    {
+      "estacion_id": 82,
+      "total_entradas": 12453,
+      "total_salidas": 15733,
+      "balance_neto": -3280,
+      "desbalance_absoluto": 9904
+    },
+    {
+      "estacion_id": 102,
+      "total_entradas": 13774,
+      "total_salidas": 13482,
+      "balance_neto": 292,
+      "desbalance_absoluto": 9882
+    },
+    {
+      "estacion_id": 169,
+      "total_entradas": 14211,
+      "total_salidas": 16101,
+      "balance_neto": -1890,
+      "desbalance_absoluto": 9810
+    },
+    {
+      "estacion_id": 249,
+      "total_entradas": 16150,
+      "total_salidas": 15609,
+      "balance_neto": 541,
+      "desbalance_absoluto": 9785
+    },
+    {
+      "estacion_id": 324,
+      "total_entradas": 11755,
+      "total_salidas": 8330,
+      "balance_neto": 3425,
+      "desbalance_absoluto": 9775
+    },
+    {
+      "estacion_id": 14,
+      "total_entradas": 13530,
+      "total_salidas": 14681,
+      "balance_neto": -1151,
+      "desbalance_absoluto": 9623
+    },
+    {
+      "estacion_id": 155,
+      "total_entradas": 12976,
+      "total_salidas": 13737,
+      "balance_neto": -761,
+      "desbalance_absoluto": 9607
+    },
+    {
+      "estacion_id": 266,
+      "total_entradas": 17112,
+      "total_salidas": 16090,
+      "balance_neto": 1022,
+      "desbalance_absoluto": 9604
+    },
+    {
+      "estacion_id": 311,
+      "total_entradas": 11751,
+      "total_salidas": 11257,
+      "balance_neto": 494,
+      "desbalance_absoluto": 9540
+    },
+    {
+      "estacion_id": 25,
+      "total_entradas": 12242,
+      "total_salidas": 12588,
+      "balance_neto": -346,
+      "desbalance_absoluto": 9538
+    },
+    {
+      "estacion_id": 108,
+      "total_entradas": 11291,
+      "total_salidas": 11006,
+      "balance_neto": 285,
+      "desbalance_absoluto": 9533
+    },
+    {
+      "estacion_id": 177,
+      "total_entradas": 12816,
+      "total_salidas": 15017,
+      "balance_neto": -2201,
+      "desbalance_absoluto": 9471
+    },
+    {
+      "estacion_id": 236,
+      "total_entradas": 11697,
+      "total_salidas": 10701,
+      "balance_neto": 996,
+      "desbalance_absoluto": 9460
+    },
+    {
+      "estacion_id": 31,
+      "total_entradas": 15867,
+      "total_salidas": 11693,
+      "balance_neto": 4174,
+      "desbalance_absoluto": 9434
+    },
+    {
+      "estacion_id": 277,
+      "total_entradas": 12430,
+      "total_salidas": 13689,
+      "balance_neto": -1259,
+      "desbalance_absoluto": 9413
+    },
+    {
+      "estacion_id": 232,
+      "total_entradas": 15058,
+      "total_salidas": 12955,
+      "balance_neto": 2103,
+      "desbalance_absoluto": 9307
+    },
+    {
+      "estacion_id": 110,
+      "total_entradas": 14913,
+      "total_salidas": 16248,
+      "balance_neto": -1335,
+      "desbalance_absoluto": 9293
+    },
+    {
+      "estacion_id": 280,
+      "total_entradas": 12879,
+      "total_salidas": 11421,
+      "balance_neto": 1458,
+      "desbalance_absoluto": 9286
+    },
+    {
+      "estacion_id": 44,
+      "total_entradas": 12072,
+      "total_salidas": 14157,
+      "balance_neto": -2085,
+      "desbalance_absoluto": 9279
+    },
+    {
+      "estacion_id": 193,
+      "total_entradas": 12918,
+      "total_salidas": 15409,
+      "balance_neto": -2491,
+      "desbalance_absoluto": 9255
+    },
+    {
+      "estacion_id": 94,
+      "total_entradas": 10090,
+      "total_salidas": 5765,
+      "balance_neto": 4325,
+      "desbalance_absoluto": 9203
+    },
+    {
+      "estacion_id": 20,
+      "total_entradas": 14026,
+      "total_salidas": 15967,
+      "balance_neto": -1941,
+      "desbalance_absoluto": 9195
+    },
+    {
+      "estacion_id": 279,
+      "total_entradas": 11570,
+      "total_salidas": 11571,
+      "balance_neto": -1,
+      "desbalance_absoluto": 9175
+    },
+    {
+      "estacion_id": 162,
+      "total_entradas": 12609,
+      "total_salidas": 10923,
+      "balance_neto": 1686,
+      "desbalance_absoluto": 9104
+    },
+    {
+      "estacion_id": 13,
+      "total_entradas": 11222,
+      "total_salidas": 12160,
+      "balance_neto": -938,
+      "desbalance_absoluto": 9102
+    },
+    {
+      "estacion_id": 29,
+      "total_entradas": 13976,
+      "total_salidas": 12067,
+      "balance_neto": 1909,
+      "desbalance_absoluto": 9089
+    },
+    {
+      "estacion_id": 18,
+      "total_entradas": 12843,
+      "total_salidas": 14640,
+      "balance_neto": -1797,
+      "desbalance_absoluto": 9087
+    },
+    {
+      "estacion_id": 83,
+      "total_entradas": 12935,
+      "total_salidas": 12896,
+      "balance_neto": 39,
+      "desbalance_absoluto": 9031
+    },
+    {
+      "estacion_id": 6,
+      "total_entradas": 13193,
+      "total_salidas": 10677,
+      "balance_neto": 2516,
+      "desbalance_absoluto": 9022
+    },
+    {
+      "estacion_id": 229,
+      "total_entradas": 10887,
+      "total_salidas": 9213,
+      "balance_neto": 1674,
+      "desbalance_absoluto": 9018
+    },
+    {
+      "estacion_id": 191,
+      "total_entradas": 8250,
+      "total_salidas": 10853,
+      "balance_neto": -2603,
+      "desbalance_absoluto": 8987
+    },
+    {
+      "estacion_id": 210,
+      "total_entradas": 11820,
+      "total_salidas": 13355,
+      "balance_neto": -1535,
+      "desbalance_absoluto": 8955
+    },
+    {
+      "estacion_id": 59,
+      "total_entradas": 12755,
+      "total_salidas": 12088,
+      "balance_neto": 667,
+      "desbalance_absoluto": 8949
+    },
+    {
+      "estacion_id": 201,
+      "total_entradas": 10234,
+      "total_salidas": 14873,
+      "balance_neto": -4639,
+      "desbalance_absoluto": 8915
+    },
+    {
+      "estacion_id": 267,
+      "total_entradas": 12334,
+      "total_salidas": 14744,
+      "balance_neto": -2410,
+      "desbalance_absoluto": 8814
+    },
+    {
+      "estacion_id": 235,
+      "total_entradas": 10669,
+      "total_salidas": 11215,
+      "balance_neto": -546,
+      "desbalance_absoluto": 8758
+    },
+    {
+      "estacion_id": 60,
+      "total_entradas": 14608,
+      "total_salidas": 14263,
+      "balance_neto": 345,
+      "desbalance_absoluto": 8733
+    },
+    {
+      "estacion_id": 76,
+      "total_entradas": 13204,
+      "total_salidas": 12981,
+      "balance_neto": 223,
+      "desbalance_absoluto": 8709
+    },
+    {
+      "estacion_id": 286,
+      "total_entradas": 7311,
+      "total_salidas": 8554,
+      "balance_neto": -1243,
+      "desbalance_absoluto": 8699
+    },
+    {
+      "estacion_id": 312,
+      "total_entradas": 11186,
+      "total_salidas": 11537,
+      "balance_neto": -351,
+      "desbalance_absoluto": 8685
+    },
+    {
+      "estacion_id": 77,
+      "total_entradas": 13585,
+      "total_salidas": 12355,
+      "balance_neto": 1230,
+      "desbalance_absoluto": 8672
+    },
+    {
+      "estacion_id": 48,
+      "total_entradas": 10566,
+      "total_salidas": 10645,
+      "balance_neto": -79,
+      "desbalance_absoluto": 8663
+    },
+    {
+      "estacion_id": 166,
+      "total_entradas": 10096,
+      "total_salidas": 10588,
+      "balance_neto": -492,
+      "desbalance_absoluto": 8658
+    },
+    {
+      "estacion_id": 304,
+      "total_entradas": 9240,
+      "total_salidas": 8002,
+      "balance_neto": 1238,
+      "desbalance_absoluto": 8606
+    },
+    {
+      "estacion_id": 190,
+      "total_entradas": 9162,
+      "total_salidas": 10977,
+      "balance_neto": -1815,
+      "desbalance_absoluto": 8563
+    },
+    {
+      "estacion_id": 37,
+      "total_entradas": 13838,
+      "total_salidas": 13573,
+      "balance_neto": 265,
+      "desbalance_absoluto": 8555
+    },
+    {
+      "estacion_id": 15,
+      "total_entradas": 10327,
+      "total_salidas": 11442,
+      "balance_neto": -1115,
+      "desbalance_absoluto": 8517
+    },
+    {
+      "estacion_id": 274,
+      "total_entradas": 11516,
+      "total_salidas": 5641,
+      "balance_neto": 5875,
+      "desbalance_absoluto": 8379
+    },
+    {
+      "estacion_id": 208,
+      "total_entradas": 8605,
+      "total_salidas": 9842,
+      "balance_neto": -1237,
+      "desbalance_absoluto": 8257
+    },
+    {
+      "estacion_id": 234,
+      "total_entradas": 9961,
+      "total_salidas": 8176,
+      "balance_neto": 1785,
+      "desbalance_absoluto": 8115
+    },
+    {
+      "estacion_id": 189,
+      "total_entradas": 7837,
+      "total_salidas": 9700,
+      "balance_neto": -1863,
+      "desbalance_absoluto": 8083
+    },
+    {
+      "estacion_id": 246,
+      "total_entradas": 10199,
+      "total_salidas": 8859,
+      "balance_neto": 1340,
+      "desbalance_absoluto": 7982
+    },
+    {
+      "estacion_id": 233,
+      "total_entradas": 12398,
+      "total_salidas": 11008,
+      "balance_neto": 1390,
+      "desbalance_absoluto": 7914
+    },
+    {
+      "estacion_id": 207,
+      "total_entradas": 14511,
+      "total_salidas": 16450,
+      "balance_neto": -1939,
+      "desbalance_absoluto": 7885
+    },
+    {
+      "estacion_id": 167,
+      "total_entradas": 6303,
+      "total_salidas": 9876,
+      "balance_neto": -3573,
+      "desbalance_absoluto": 7881
+    },
+    {
+      "estacion_id": 55,
+      "total_entradas": 10620,
+      "total_salidas": 8887,
+      "balance_neto": 1733,
+      "desbalance_absoluto": 7723
+    },
+    {
+      "estacion_id": 159,
+      "total_entradas": 12056,
+      "total_salidas": 10400,
+      "balance_neto": 1656,
+      "desbalance_absoluto": 7722
+    },
+    {
+      "estacion_id": 143,
+      "total_entradas": 8349,
+      "total_salidas": 9137,
+      "balance_neto": -788,
+      "desbalance_absoluto": 7720
+    },
+    {
+      "estacion_id": 57,
+      "total_entradas": 10143,
+      "total_salidas": 8387,
+      "balance_neto": 1756,
+      "desbalance_absoluto": 7610
+    },
+    {
+      "estacion_id": 244,
+      "total_entradas": 7081,
+      "total_salidas": 9484,
+      "balance_neto": -2403,
+      "desbalance_absoluto": 7563
+    },
+    {
+      "estacion_id": 282,
+      "total_entradas": 10588,
+      "total_salidas": 9378,
+      "balance_neto": 1210,
+      "desbalance_absoluto": 7544
+    },
+    {
+      "estacion_id": 285,
+      "total_entradas": 8913,
+      "total_salidas": 8560,
+      "balance_neto": 353,
+      "desbalance_absoluto": 7541
+    },
+    {
+      "estacion_id": 248,
+      "total_entradas": 9433,
+      "total_salidas": 5238,
+      "balance_neto": 4195,
+      "desbalance_absoluto": 7523
+    },
+    {
+      "estacion_id": 8,
+      "total_entradas": 10310,
+      "total_salidas": 9196,
+      "balance_neto": 1114,
+      "desbalance_absoluto": 7520
+    },
+    {
+      "estacion_id": 87,
+      "total_entradas": 6829,
+      "total_salidas": 9033,
+      "balance_neto": -2204,
+      "desbalance_absoluto": 7484
+    },
+    {
+      "estacion_id": 115,
+      "total_entradas": 7060,
+      "total_salidas": 6528,
+      "balance_neto": 532,
+      "desbalance_absoluto": 7478
+    },
+    {
+      "estacion_id": 184,
+      "total_entradas": 7629,
+      "total_salidas": 9694,
+      "balance_neto": -2065,
+      "desbalance_absoluto": 7453
+    },
+    {
+      "estacion_id": 202,
+      "total_entradas": 7840,
+      "total_salidas": 8835,
+      "balance_neto": -995,
+      "desbalance_absoluto": 7441
+    },
+    {
+      "estacion_id": 187,
+      "total_entradas": 6813,
+      "total_salidas": 8376,
+      "balance_neto": -1563,
+      "desbalance_absoluto": 7323
+    },
+    {
+      "estacion_id": 88,
+      "total_entradas": 8064,
+      "total_salidas": 10399,
+      "balance_neto": -2335,
+      "desbalance_absoluto": 7299
+    },
+    {
+      "estacion_id": 131,
+      "total_entradas": 10173,
+      "total_salidas": 11198,
+      "balance_neto": -1025,
+      "desbalance_absoluto": 7265
+    },
+    {
+      "estacion_id": 261,
+      "total_entradas": 10938,
+      "total_salidas": 6431,
+      "balance_neto": 4507,
+      "desbalance_absoluto": 7187
+    },
+    {
+      "estacion_id": 278,
+      "total_entradas": 9847,
+      "total_salidas": 9681,
+      "balance_neto": 166,
+      "desbalance_absoluto": 7128
+    },
+    {
+      "estacion_id": 183,
+      "total_entradas": 6175,
+      "total_salidas": 8399,
+      "balance_neto": -2224,
+      "desbalance_absoluto": 7124
+    },
+    {
+      "estacion_id": 192,
+      "total_entradas": 6039,
+      "total_salidas": 8216,
+      "balance_neto": -2177,
+      "desbalance_absoluto": 7123
+    },
+    {
+      "estacion_id": 204,
+      "total_entradas": 6390,
+      "total_salidas": 7825,
+      "balance_neto": -1435,
+      "desbalance_absoluto": 7101
+    },
+    {
+      "estacion_id": 228,
+      "total_entradas": 8073,
+      "total_salidas": 6967,
+      "balance_neto": 1106,
+      "desbalance_absoluto": 7088
+    },
+    {
+      "estacion_id": 295,
+      "total_entradas": 6974,
+      "total_salidas": 7418,
+      "balance_neto": -444,
+      "desbalance_absoluto": 7086
+    },
+    {
+      "estacion_id": 326,
+      "total_entradas": 6618,
+      "total_salidas": 4537,
+      "balance_neto": 2081,
+      "desbalance_absoluto": 7077
+    },
+    {
+      "estacion_id": 230,
+      "total_entradas": 10259,
+      "total_salidas": 8993,
+      "balance_neto": 1266,
+      "desbalance_absoluto": 7056
+    },
+    {
+      "estacion_id": 176,
+      "total_entradas": 7348,
+      "total_salidas": 10014,
+      "balance_neto": -2666,
+      "desbalance_absoluto": 7014
+    },
+    {
+      "estacion_id": 251,
+      "total_entradas": 6578,
+      "total_salidas": 8481,
+      "balance_neto": -1903,
+      "desbalance_absoluto": 6983
+    },
+    {
+      "estacion_id": 319,
+      "total_entradas": 6854,
+      "total_salidas": 8490,
+      "balance_neto": -1636,
+      "desbalance_absoluto": 6942
+    },
+    {
+      "estacion_id": 150,
+      "total_entradas": 7985,
+      "total_salidas": 8080,
+      "balance_neto": -95,
+      "desbalance_absoluto": 6877
+    },
+    {
+      "estacion_id": 126,
+      "total_entradas": 6723,
+      "total_salidas": 8306,
+      "balance_neto": -1583,
+      "desbalance_absoluto": 6789
+    },
+    {
+      "estacion_id": 216,
+      "total_entradas": 6521,
+      "total_salidas": 9576,
+      "balance_neto": -3055,
+      "desbalance_absoluto": 6723
+    },
+    {
+      "estacion_id": 231,
+      "total_entradas": 6738,
+      "total_salidas": 6787,
+      "balance_neto": -49,
+      "desbalance_absoluto": 6579
+    },
+    {
+      "estacion_id": 148,
+      "total_entradas": 7034,
+      "total_salidas": 7822,
+      "balance_neto": -788,
+      "desbalance_absoluto": 6562
+    },
+    {
+      "estacion_id": 225,
+      "total_entradas": 6747,
+      "total_salidas": 5911,
+      "balance_neto": 836,
+      "desbalance_absoluto": 6538
+    },
+    {
+      "estacion_id": 142,
+      "total_entradas": 6646,
+      "total_salidas": 6661,
+      "balance_neto": -15,
+      "desbalance_absoluto": 6535
+    },
+    {
+      "estacion_id": 321,
+      "total_entradas": 7915,
+      "total_salidas": 9542,
+      "balance_neto": -1627,
+      "desbalance_absoluto": 6515
+    },
+    {
+      "estacion_id": 264,
+      "total_entradas": 9700,
+      "total_salidas": 7049,
+      "balance_neto": 2651,
+      "desbalance_absoluto": 6507
+    },
+    {
+      "estacion_id": 185,
+      "total_entradas": 5173,
+      "total_salidas": 6476,
+      "balance_neto": -1303,
+      "desbalance_absoluto": 6405
+    },
+    {
+      "estacion_id": 206,
+      "total_entradas": 8249,
+      "total_salidas": 9812,
+      "balance_neto": -1563,
+      "desbalance_absoluto": 6161
+    },
+    {
+      "estacion_id": 322,
+      "total_entradas": 6163,
+      "total_salidas": 6747,
+      "balance_neto": -584,
+      "desbalance_absoluto": 6090
+    },
+    {
+      "estacion_id": 211,
+      "total_entradas": 6844,
+      "total_salidas": 7417,
+      "balance_neto": -573,
+      "desbalance_absoluto": 6069
+    },
+    {
+      "estacion_id": 270,
+      "total_entradas": 5570,
+      "total_salidas": 5698,
+      "balance_neto": -128,
+      "desbalance_absoluto": 6006
+    },
+    {
+      "estacion_id": 290,
+      "total_entradas": 5344,
+      "total_salidas": 5699,
+      "balance_neto": -355,
+      "desbalance_absoluto": 5929
+    },
+    {
+      "estacion_id": 112,
+      "total_entradas": 6741,
+      "total_salidas": 6076,
+      "balance_neto": 665,
+      "desbalance_absoluto": 5829
+    },
+    {
+      "estacion_id": 293,
+      "total_entradas": 5753,
+      "total_salidas": 4868,
+      "balance_neto": 885,
+      "desbalance_absoluto": 5663
+    },
+    {
+      "estacion_id": 289,
+      "total_entradas": 8206,
+      "total_salidas": 6984,
+      "balance_neto": 1222,
+      "desbalance_absoluto": 5630
+    },
+    {
+      "estacion_id": 118,
+      "total_entradas": 4512,
+      "total_salidas": 5581,
+      "balance_neto": -1069,
+      "desbalance_absoluto": 5529
+    },
+    {
+      "estacion_id": 92,
+      "total_entradas": 4222,
+      "total_salidas": 5218,
+      "balance_neto": -996,
+      "desbalance_absoluto": 5524
+    },
+    {
+      "estacion_id": 227,
+      "total_entradas": 6693,
+      "total_salidas": 6234,
+      "balance_neto": 459,
+      "desbalance_absoluto": 5471
+    },
+    {
+      "estacion_id": 224,
+      "total_entradas": 5480,
+      "total_salidas": 6621,
+      "balance_neto": -1141,
+      "desbalance_absoluto": 5441
+    },
+    {
+      "estacion_id": 106,
+      "total_entradas": 5355,
+      "total_salidas": 6228,
+      "balance_neto": -873,
+      "desbalance_absoluto": 5427
+    },
+    {
+      "estacion_id": 241,
+      "total_entradas": 4548,
+      "total_salidas": 5841,
+      "balance_neto": -1293,
+      "desbalance_absoluto": 5353
+    },
+    {
+      "estacion_id": 302,
+      "total_entradas": 5649,
+      "total_salidas": 5169,
+      "balance_neto": 480,
+      "desbalance_absoluto": 5338
+    },
+    {
+      "estacion_id": 258,
+      "total_entradas": 6064,
+      "total_salidas": 6281,
+      "balance_neto": -217,
+      "desbalance_absoluto": 5335
+    },
+    {
+      "estacion_id": 313,
+      "total_entradas": 4802,
+      "total_salidas": 6176,
+      "balance_neto": -1374,
+      "desbalance_absoluto": 5282
+    },
+    {
+      "estacion_id": 307,
+      "total_entradas": 4774,
+      "total_salidas": 4529,
+      "balance_neto": 245,
+      "desbalance_absoluto": 5273
+    },
+    {
+      "estacion_id": 125,
+      "total_entradas": 4352,
+      "total_salidas": 6217,
+      "balance_neto": -1865,
+      "desbalance_absoluto": 5263
+    },
+    {
+      "estacion_id": 284,
+      "total_entradas": 6111,
+      "total_salidas": 5967,
+      "balance_neto": 144,
+      "desbalance_absoluto": 5232
+    },
+    {
+      "estacion_id": 130,
+      "total_entradas": 4940,
+      "total_salidas": 6139,
+      "balance_neto": -1199,
+      "desbalance_absoluto": 5227
+    },
+    {
+      "estacion_id": 212,
+      "total_entradas": 4235,
+      "total_salidas": 6304,
+      "balance_neto": -2069,
+      "desbalance_absoluto": 5193
+    },
+    {
+      "estacion_id": 305,
+      "total_entradas": 5342,
+      "total_salidas": 5363,
+      "balance_neto": -21,
+      "desbalance_absoluto": 5163
+    },
+    {
+      "estacion_id": 186,
+      "total_entradas": 3978,
+      "total_salidas": 6000,
+      "balance_neto": -2022,
+      "desbalance_absoluto": 5102
+    },
+    {
+      "estacion_id": 93,
+      "total_entradas": 3271,
+      "total_salidas": 4443,
+      "balance_neto": -1172,
+      "desbalance_absoluto": 4972
+    },
+    {
+      "estacion_id": 105,
+      "total_entradas": 4310,
+      "total_salidas": 4339,
+      "balance_neto": -29,
+      "desbalance_absoluto": 4929
+    },
+    {
+      "estacion_id": 117,
+      "total_entradas": 4630,
+      "total_salidas": 4998,
+      "balance_neto": -368,
+      "desbalance_absoluto": 4836
+    },
+    {
+      "estacion_id": 294,
+      "total_entradas": 4730,
+      "total_salidas": 3331,
+      "balance_neto": 1399,
+      "desbalance_absoluto": 4831
+    },
+    {
+      "estacion_id": 209,
+      "total_entradas": 3436,
+      "total_salidas": 4521,
+      "balance_neto": -1085,
+      "desbalance_absoluto": 4757
+    },
+    {
+      "estacion_id": 135,
+      "total_entradas": 3761,
+      "total_salidas": 4637,
+      "balance_neto": -876,
+      "desbalance_absoluto": 4660
+    },
+    {
+      "estacion_id": 213,
+      "total_entradas": 5746,
+      "total_salidas": 6886,
+      "balance_neto": -1140,
+      "desbalance_absoluto": 4638
+    },
+    {
+      "estacion_id": 133,
+      "total_entradas": 3794,
+      "total_salidas": 5183,
+      "balance_neto": -1389,
+      "desbalance_absoluto": 4595
+    },
+    {
+      "estacion_id": 127,
+      "total_entradas": 3381,
+      "total_salidas": 4630,
+      "balance_neto": -1249,
+      "desbalance_absoluto": 4557
+    },
+    {
+      "estacion_id": 243,
+      "total_entradas": 3773,
+      "total_salidas": 4421,
+      "balance_neto": -648,
+      "desbalance_absoluto": 4544
+    },
+    {
+      "estacion_id": 205,
+      "total_entradas": 2892,
+      "total_salidas": 5077,
+      "balance_neto": -2185,
+      "desbalance_absoluto": 4515
+    },
+    {
+      "estacion_id": 214,
+      "total_entradas": 3335,
+      "total_salidas": 5788,
+      "balance_neto": -2453,
+      "desbalance_absoluto": 4389
+    },
+    {
+      "estacion_id": 111,
+      "total_entradas": 4488,
+      "total_salidas": 3565,
+      "balance_neto": 923,
+      "desbalance_absoluto": 4365
+    },
+    {
+      "estacion_id": 103,
+      "total_entradas": 3973,
+      "total_salidas": 4456,
+      "balance_neto": -483,
+      "desbalance_absoluto": 4355
+    },
+    {
+      "estacion_id": 98,
+      "total_entradas": 3323,
+      "total_salidas": 4713,
+      "balance_neto": -1390,
+      "desbalance_absoluto": 4280
+    },
+    {
+      "estacion_id": 325,
+      "total_entradas": 2835,
+      "total_salidas": 4283,
+      "balance_neto": -1448,
+      "desbalance_absoluto": 4178
+    },
+    {
+      "estacion_id": 317,
+      "total_entradas": 2913,
+      "total_salidas": 3325,
+      "balance_neto": -412,
+      "desbalance_absoluto": 4132
+    },
+    {
+      "estacion_id": 238,
+      "total_entradas": 3467,
+      "total_salidas": 4233,
+      "balance_neto": -766,
+      "desbalance_absoluto": 4070
+    },
+    {
+      "estacion_id": 132,
+      "total_entradas": 3154,
+      "total_salidas": 3890,
+      "balance_neto": -736,
+      "desbalance_absoluto": 4050
+    },
+    {
+      "estacion_id": 222,
+      "total_entradas": 2387,
+      "total_salidas": 3863,
+      "balance_neto": -1476,
+      "desbalance_absoluto": 4032
+    },
+    {
+      "estacion_id": 152,
+      "total_entradas": 2681,
+      "total_salidas": 3672,
+      "balance_neto": -991,
+      "desbalance_absoluto": 3953
+    },
+    {
+      "estacion_id": 315,
+      "total_entradas": 2815,
+      "total_salidas": 4488,
+      "balance_neto": -1673,
+      "desbalance_absoluto": 3897
+    },
+    {
+      "estacion_id": 128,
+      "total_entradas": 2531,
+      "total_salidas": 4094,
+      "balance_neto": -1563,
+      "desbalance_absoluto": 3889
+    },
+    {
+      "estacion_id": 134,
+      "total_entradas": 2429,
+      "total_salidas": 3192,
+      "balance_neto": -763,
+      "desbalance_absoluto": 3881
+    },
+    {
+      "estacion_id": 306,
+      "total_entradas": 3028,
+      "total_salidas": 4332,
+      "balance_neto": -1304,
+      "desbalance_absoluto": 3820
+    },
+    {
+      "estacion_id": 141,
+      "total_entradas": 3319,
+      "total_salidas": 3709,
+      "balance_neto": -390,
+      "desbalance_absoluto": 3804
+    },
+    {
+      "estacion_id": 242,
+      "total_entradas": 3197,
+      "total_salidas": 3949,
+      "balance_neto": -752,
+      "desbalance_absoluto": 3802
+    },
+    {
+      "estacion_id": 215,
+      "total_entradas": 2614,
+      "total_salidas": 4250,
+      "balance_neto": -1636,
+      "desbalance_absoluto": 3744
+    },
+    {
+      "estacion_id": 96,
+      "total_entradas": 4136,
+      "total_salidas": 5136,
+      "balance_neto": -1000,
+      "desbalance_absoluto": 3650
+    },
+    {
+      "estacion_id": 100,
+      "total_entradas": 2980,
+      "total_salidas": 3438,
+      "balance_neto": -458,
+      "desbalance_absoluto": 3650
+    },
+    {
+      "estacion_id": 140,
+      "total_entradas": 2597,
+      "total_salidas": 3453,
+      "balance_neto": -856,
+      "desbalance_absoluto": 3616
+    },
+    {
+      "estacion_id": 308,
+      "total_entradas": 2751,
+      "total_salidas": 3995,
+      "balance_neto": -1244,
+      "desbalance_absoluto": 3586
+    },
+    {
+      "estacion_id": 144,
+      "total_entradas": 2638,
+      "total_salidas": 3333,
+      "balance_neto": -695,
+      "desbalance_absoluto": 3571
+    },
+    {
+      "estacion_id": 309,
+      "total_entradas": 2864,
+      "total_salidas": 3782,
+      "balance_neto": -918,
+      "desbalance_absoluto": 3450
+    },
+    {
+      "estacion_id": 221,
+      "total_entradas": 3511,
+      "total_salidas": 4676,
+      "balance_neto": -1165,
+      "desbalance_absoluto": 3443
+    },
+    {
+      "estacion_id": 320,
+      "total_entradas": 2120,
+      "total_salidas": 3326,
+      "balance_neto": -1206,
+      "desbalance_absoluto": 3344
+    },
+    {
+      "estacion_id": 91,
+      "total_entradas": 2293,
+      "total_salidas": 2452,
+      "balance_neto": -159,
+      "desbalance_absoluto": 3313
+    },
+    {
+      "estacion_id": 145,
+      "total_entradas": 2112,
+      "total_salidas": 2860,
+      "balance_neto": -748,
+      "desbalance_absoluto": 3302
+    },
+    {
+      "estacion_id": 120,
+      "total_entradas": 1629,
+      "total_salidas": 3529,
+      "balance_neto": -1900,
+      "desbalance_absoluto": 3272
+    },
+    {
+      "estacion_id": 151,
+      "total_entradas": 2197,
+      "total_salidas": 2834,
+      "balance_neto": -637,
+      "desbalance_absoluto": 3193
+    },
+    {
+      "estacion_id": 129,
+      "total_entradas": 1930,
+      "total_salidas": 3037,
+      "balance_neto": -1107,
+      "desbalance_absoluto": 3145
+    },
+    {
+      "estacion_id": 239,
+      "total_entradas": 2249,
+      "total_salidas": 2672,
+      "balance_neto": -423,
+      "desbalance_absoluto": 3089
+    },
+    {
+      "estacion_id": 314,
+      "total_entradas": 2431,
+      "total_salidas": 3083,
+      "balance_neto": -652,
+      "desbalance_absoluto": 3088
+    },
+    {
+      "estacion_id": 292,
+      "total_entradas": 2161,
+      "total_salidas": 2559,
+      "balance_neto": -398,
+      "desbalance_absoluto": 3042
+    },
+    {
+      "estacion_id": 119,
+      "total_entradas": 1895,
+      "total_salidas": 2626,
+      "balance_neto": -731,
+      "desbalance_absoluto": 3039
+    },
+    {
+      "estacion_id": 318,
+      "total_entradas": 2474,
+      "total_salidas": 2600,
+      "balance_neto": -126,
+      "desbalance_absoluto": 3034
+    },
+    {
+      "estacion_id": 139,
+      "total_entradas": 2211,
+      "total_salidas": 2772,
+      "balance_neto": -561,
+      "desbalance_absoluto": 2949
+    },
+    {
+      "estacion_id": 137,
+      "total_entradas": 2197,
+      "total_salidas": 2746,
+      "balance_neto": -549,
+      "desbalance_absoluto": 2933
+    },
+    {
+      "estacion_id": 217,
+      "total_entradas": 2113,
+      "total_salidas": 2637,
+      "balance_neto": -524,
+      "desbalance_absoluto": 2826
+    },
+    {
+      "estacion_id": 316,
+      "total_entradas": 2006,
+      "total_salidas": 2926,
+      "balance_neto": -920,
+      "desbalance_absoluto": 2806
+    },
+    {
+      "estacion_id": 237,
+      "total_entradas": 1947,
+      "total_salidas": 2146,
+      "balance_neto": -199,
+      "desbalance_absoluto": 2587
+    },
+    {
+      "estacion_id": 153,
+      "total_entradas": 1591,
+      "total_salidas": 2009,
+      "balance_neto": -418,
+      "desbalance_absoluto": 2540
+    },
+    {
+      "estacion_id": 219,
+      "total_entradas": 1748,
+      "total_salidas": 2867,
+      "balance_neto": -1119,
+      "desbalance_absoluto": 2513
+    },
+    {
+      "estacion_id": 310,
+      "total_entradas": 1296,
+      "total_salidas": 2366,
+      "balance_neto": -1070,
+      "desbalance_absoluto": 2476
+    },
+    {
+      "estacion_id": 107,
+      "total_entradas": 1459,
+      "total_salidas": 2083,
+      "balance_neto": -624,
+      "desbalance_absoluto": 2396
+    },
+    {
+      "estacion_id": 95,
+      "total_entradas": 1464,
+      "total_salidas": 1778,
+      "balance_neto": -314,
+      "desbalance_absoluto": 2288
+    },
+    {
+      "estacion_id": 218,
+      "total_entradas": 1238,
+      "total_salidas": 1944,
+      "balance_neto": -706,
+      "desbalance_absoluto": 2150
+    },
+    {
+      "estacion_id": 287,
+      "total_entradas": 1052,
+      "total_salidas": 1567,
+      "balance_neto": -515,
+      "desbalance_absoluto": 1905
+    },
+    {
+      "estacion_id": 346,
+      "total_entradas": 2416,
+      "total_salidas": 2231,
+      "balance_neto": 185,
+      "desbalance_absoluto": 1823
+    },
+    {
+      "estacion_id": 220,
+      "total_entradas": 1514,
+      "total_salidas": 2058,
+      "balance_neto": -544,
+      "desbalance_absoluto": 1820
+    },
+    {
+      "estacion_id": 136,
+      "total_entradas": 1386,
+      "total_salidas": 1505,
+      "balance_neto": -119,
+      "desbalance_absoluto": 1807
+    },
+    {
+      "estacion_id": 146,
+      "total_entradas": 843,
+      "total_salidas": 1123,
+      "balance_neto": -280,
+      "desbalance_absoluto": 1460
+    },
+    {
+      "estacion_id": 333,
+      "total_entradas": 1433,
+      "total_salidas": 1274,
+      "balance_neto": 159,
+      "desbalance_absoluto": 1429
+    },
+    {
+      "estacion_id": 101,
+      "total_entradas": 907,
+      "total_salidas": 1230,
+      "balance_neto": -323,
+      "desbalance_absoluto": 1421
+    },
+    {
+      "estacion_id": 240,
+      "total_entradas": 559,
+      "total_salidas": 1108,
+      "balance_neto": -549,
+      "desbalance_absoluto": 1329
+    },
+    {
+      "estacion_id": 347,
+      "total_entradas": 1278,
+      "total_salidas": 1004,
+      "balance_neto": 274,
+      "desbalance_absoluto": 1324
+    },
+    {
+      "estacion_id": 104,
+      "total_entradas": 540,
+      "total_salidas": 1141,
+      "balance_neto": -601,
+      "desbalance_absoluto": 1289
+    },
+    {
+      "estacion_id": 341,
+      "total_entradas": 1712,
+      "total_salidas": 901,
+      "balance_neto": 811,
+      "desbalance_absoluto": 1269
+    },
+    {
+      "estacion_id": 354,
+      "total_entradas": 1308,
+      "total_salidas": 1334,
+      "balance_neto": -26,
+      "desbalance_absoluto": 1154
+    },
+    {
+      "estacion_id": 349,
+      "total_entradas": 1123,
+      "total_salidas": 924,
+      "balance_neto": 199,
+      "desbalance_absoluto": 1135
+    },
+    {
+      "estacion_id": 340,
+      "total_entradas": 1243,
+      "total_salidas": 951,
+      "balance_neto": 292,
+      "desbalance_absoluto": 1088
+    },
+    {
+      "estacion_id": 336,
+      "total_entradas": 1042,
+      "total_salidas": 635,
+      "balance_neto": 407,
+      "desbalance_absoluto": 1081
+    },
+    {
+      "estacion_id": 332,
+      "total_entradas": 954,
+      "total_salidas": 861,
+      "balance_neto": 93,
+      "desbalance_absoluto": 1067
+    },
+    {
+      "estacion_id": 337,
+      "total_entradas": 810,
+      "total_salidas": 699,
+      "balance_neto": 111,
+      "desbalance_absoluto": 989
+    },
+    {
+      "estacion_id": 331,
+      "total_entradas": 1085,
+      "total_salidas": 867,
+      "balance_neto": 218,
+      "desbalance_absoluto": 944
+    },
+    {
+      "estacion_id": 329,
+      "total_entradas": 937,
+      "total_salidas": 596,
+      "balance_neto": 341,
+      "desbalance_absoluto": 927
+    },
+    {
+      "estacion_id": 363,
+      "total_entradas": 742,
+      "total_salidas": 756,
+      "balance_neto": -14,
+      "desbalance_absoluto": 862
+    },
+    {
+      "estacion_id": 373,
+      "total_entradas": 776,
+      "total_salidas": 610,
+      "balance_neto": 166,
+      "desbalance_absoluto": 822
+    },
+    {
+      "estacion_id": 351,
+      "total_entradas": 588,
+      "total_salidas": 876,
+      "balance_neto": -288,
+      "desbalance_absoluto": 798
+    },
+    {
+      "estacion_id": 359,
+      "total_entradas": 720,
+      "total_salidas": 578,
+      "balance_neto": 142,
+      "desbalance_absoluto": 748
+    },
+    {
+      "estacion_id": 387,
+      "total_entradas": 819,
+      "total_salidas": 852,
+      "balance_neto": -33,
+      "desbalance_absoluto": 747
+    },
+    {
+      "estacion_id": 352,
+      "total_entradas": 489,
+      "total_salidas": 647,
+      "balance_neto": -158,
+      "desbalance_absoluto": 746
+    },
+    {
+      "estacion_id": 338,
+      "total_entradas": 638,
+      "total_salidas": 484,
+      "balance_neto": 154,
+      "desbalance_absoluto": 720
+    },
+    {
+      "estacion_id": 330,
+      "total_entradas": 720,
+      "total_salidas": 493,
+      "balance_neto": 227,
+      "desbalance_absoluto": 689
+    },
+    {
+      "estacion_id": 335,
+      "total_entradas": 633,
+      "total_salidas": 363,
+      "balance_neto": 270,
+      "desbalance_absoluto": 684
+    },
+    {
+      "estacion_id": 350,
+      "total_entradas": 701,
+      "total_salidas": 487,
+      "balance_neto": 214,
+      "desbalance_absoluto": 674
+    },
+    {
+      "estacion_id": 383,
+      "total_entradas": 566,
+      "total_salidas": 560,
+      "balance_neto": 6,
+      "desbalance_absoluto": 666
+    },
+    {
+      "estacion_id": 371,
+      "total_entradas": 824,
+      "total_salidas": 685,
+      "balance_neto": 139,
+      "desbalance_absoluto": 663
+    },
+    {
+      "estacion_id": 339,
+      "total_entradas": 517,
+      "total_salidas": 480,
+      "balance_neto": 37,
+      "desbalance_absoluto": 641
+    },
+    {
+      "estacion_id": 328,
+      "total_entradas": 507,
+      "total_salidas": 349,
+      "balance_neto": 158,
+      "desbalance_absoluto": 616
+    },
+    {
+      "estacion_id": 355,
+      "total_entradas": 558,
+      "total_salidas": 465,
+      "balance_neto": 93,
+      "desbalance_absoluto": 613
+    },
+    {
+      "estacion_id": 334,
+      "total_entradas": 601,
+      "total_salidas": 636,
+      "balance_neto": -35,
+      "desbalance_absoluto": 591
+    },
+    {
+      "estacion_id": 376,
+      "total_entradas": 561,
+      "total_salidas": 561,
+      "balance_neto": 0,
+      "desbalance_absoluto": 590
+    },
+    {
+      "estacion_id": 377,
+      "total_entradas": 554,
+      "total_salidas": 469,
+      "balance_neto": 85,
+      "desbalance_absoluto": 583
+    },
+    {
+      "estacion_id": 344,
+      "total_entradas": 405,
+      "total_salidas": 550,
+      "balance_neto": -145,
+      "desbalance_absoluto": 581
+    },
+    {
+      "estacion_id": 345,
+      "total_entradas": 441,
+      "total_salidas": 527,
+      "balance_neto": -86,
+      "desbalance_absoluto": 572
+    },
+    {
+      "estacion_id": 379,
+      "total_entradas": 528,
+      "total_salidas": 279,
+      "balance_neto": 249,
+      "desbalance_absoluto": 495
+    },
+    {
+      "estacion_id": 368,
+      "total_entradas": 368,
+      "total_salidas": 355,
+      "balance_neto": 13,
+      "desbalance_absoluto": 479
+    },
+    {
+      "estacion_id": 385,
+      "total_entradas": 395,
+      "total_salidas": 354,
+      "balance_neto": 41,
+      "desbalance_absoluto": 475
+    },
+    {
+      "estacion_id": 357,
+      "total_entradas": 379,
+      "total_salidas": 392,
+      "balance_neto": -13,
+      "desbalance_absoluto": 467
+    },
+    {
+      "estacion_id": 382,
+      "total_entradas": 390,
+      "total_salidas": 438,
+      "balance_neto": -48,
+      "desbalance_absoluto": 462
+    },
+    {
+      "estacion_id": 381,
+      "total_entradas": 380,
+      "total_salidas": 336,
+      "balance_neto": 44,
+      "desbalance_absoluto": 458
+    },
+    {
+      "estacion_id": 375,
+      "total_entradas": 320,
+      "total_salidas": 331,
+      "balance_neto": -11,
+      "desbalance_absoluto": 421
+    },
+    {
+      "estacion_id": 361,
+      "total_entradas": 346,
+      "total_salidas": 270,
+      "balance_neto": 76,
+      "desbalance_absoluto": 418
+    },
+    {
+      "estacion_id": 372,
+      "total_entradas": 335,
+      "total_salidas": 224,
+      "balance_neto": 111,
+      "desbalance_absoluto": 377
+    },
+    {
+      "estacion_id": 360,
+      "total_entradas": 319,
+      "total_salidas": 220,
+      "balance_neto": 99,
+      "desbalance_absoluto": 375
+    },
+    {
+      "estacion_id": 343,
+      "total_entradas": 195,
+      "total_salidas": 348,
+      "balance_neto": -153,
+      "desbalance_absoluto": 371
+    },
+    {
+      "estacion_id": 348,
+      "total_entradas": 249,
+      "total_salidas": 246,
+      "balance_neto": 3,
+      "desbalance_absoluto": 353
+    },
+    {
+      "estacion_id": 364,
+      "total_entradas": 281,
+      "total_salidas": 262,
+      "balance_neto": 19,
+      "desbalance_absoluto": 347
+    },
+    {
+      "estacion_id": 366,
+      "total_entradas": 214,
+      "total_salidas": 256,
+      "balance_neto": -42,
+      "desbalance_absoluto": 316
+    },
+    {
+      "estacion_id": 388,
+      "total_entradas": 291,
+      "total_salidas": 268,
+      "balance_neto": 23,
+      "desbalance_absoluto": 309
+    },
+    {
+      "estacion_id": 358,
+      "total_entradas": 189,
+      "total_salidas": 234,
+      "balance_neto": -45,
+      "desbalance_absoluto": 307
+    },
+    {
+      "estacion_id": 386,
+      "total_entradas": 284,
+      "total_salidas": 335,
+      "balance_neto": -51,
+      "desbalance_absoluto": 291
+    },
+    {
+      "estacion_id": 369,
+      "total_entradas": 209,
+      "total_salidas": 262,
+      "balance_neto": -53,
+      "desbalance_absoluto": 289
+    },
+    {
+      "estacion_id": 353,
+      "total_entradas": 253,
+      "total_salidas": 186,
+      "balance_neto": 67,
+      "desbalance_absoluto": 275
+    },
+    {
+      "estacion_id": 342,
+      "total_entradas": 144,
+      "total_salidas": 245,
+      "balance_neto": -101,
+      "desbalance_absoluto": 271
+    },
+    {
+      "estacion_id": 378,
+      "total_entradas": 152,
+      "total_salidas": 215,
+      "balance_neto": -63,
+      "desbalance_absoluto": 267
+    },
+    {
+      "estacion_id": 362,
+      "total_entradas": 113,
+      "total_salidas": 188,
+      "balance_neto": -75,
+      "desbalance_absoluto": 251
+    },
+    {
+      "estacion_id": 374,
+      "total_entradas": 195,
+      "total_salidas": 178,
+      "balance_neto": 17,
+      "desbalance_absoluto": 229
+    },
+    {
+      "estacion_id": 365,
+      "total_entradas": 141,
+      "total_salidas": 143,
+      "balance_neto": -2,
+      "desbalance_absoluto": 214
+    },
+    {
+      "estacion_id": 356,
+      "total_entradas": 121,
+      "total_salidas": 148,
+      "balance_neto": -27,
+      "desbalance_absoluto": 197
+    },
+    {
+      "estacion_id": 370,
+      "total_entradas": 113,
+      "total_salidas": 68,
+      "balance_neto": 45,
+      "desbalance_absoluto": 143
+    },
+    {
+      "estacion_id": 380,
+      "total_entradas": 20,
+      "total_salidas": 75,
+      "balance_neto": -55,
+      "desbalance_absoluto": 77
+    }
+  ],
+  "estacion_ejemplo": [
+    {
+      "hora": 0,
+      "entradas": 0.4423076923,
+      "salidas": 0.7230769231,
+      "balance": -0.2807692308
+    },
+    {
+      "hora": 1,
+      "entradas": 0.0769230769,
+      "salidas": 0.0,
+      "balance": 0.0769230769
+    },
+    {
+      "hora": 2,
+      "entradas": 0.0038461538,
+      "salidas": 0.0,
+      "balance": 0.0038461538
+    },
+    {
+      "hora": 3,
+      "entradas": 0.0,
+      "salidas": 0.0,
+      "balance": 0.0
+    },
+    {
+      "hora": 4,
+      "entradas": 0.0038461538,
+      "salidas": 0.0,
+      "balance": 0.0038461538
+    },
+    {
+      "hora": 5,
+      "entradas": 0.65,
+      "salidas": 1.2153846154,
+      "balance": -0.5653846154
+    },
+    {
+      "hora": 6,
+      "entradas": 4.7923076923,
+      "salidas": 7.7384615385,
+      "balance": -2.9461538462
+    },
+    {
+      "hora": 7,
+      "entradas": 8.4653846154,
+      "salidas": 25.2807692308,
+      "balance": -16.8153846154
+    },
+    {
+      "hora": 8,
+      "entradas": 12.5615384615,
+      "salidas": 53.35,
+      "balance": -40.7884615385
+    },
+    {
+      "hora": 9,
+      "entradas": 7.9269230769,
+      "salidas": 26.6384615385,
+      "balance": -18.7115384615
+    },
+    {
+      "hora": 10,
+      "entradas": 8.9884615385,
+      "salidas": 14.0384615385,
+      "balance": -5.05
+    },
+    {
+      "hora": 11,
+      "entradas": 9.0115384615,
+      "salidas": 12.4846153846,
+      "balance": -3.4730769231
+    },
+    {
+      "hora": 12,
+      "entradas": 9.9153846154,
+      "salidas": 9.2538461538,
+      "balance": 0.6615384615
+    },
+    {
+      "hora": 13,
+      "entradas": 11.2461538462,
+      "salidas": 12.3423076923,
+      "balance": -1.0961538462
+    },
+    {
+      "hora": 14,
+      "entradas": 17.1846153846,
+      "salidas": 12.5961538462,
+      "balance": 4.5884615385
+    },
+    {
+      "hora": 15,
+      "entradas": 22.3230769231,
+      "salidas": 13.1923076923,
+      "balance": 9.1307692308
+    },
+    {
+      "hora": 16,
+      "entradas": 27.5961538462,
+      "salidas": 12.3115384615,
+      "balance": 15.2846153846
+    },
+    {
+      "hora": 17,
+      "entradas": 44.3230769231,
+      "salidas": 17.0653846154,
+      "balance": 27.2576923077
+    },
+    {
+      "hora": 18,
+      "entradas": 71.5961538462,
+      "salidas": 19.9038461538,
+      "balance": 51.6923076923
+    },
+    {
+      "hora": 19,
+      "entradas": 51.4807692308,
+      "salidas": 18.1153846154,
+      "balance": 33.3653846154
+    },
+    {
+      "hora": 20,
+      "entradas": 27.4,
+      "salidas": 12.4576923077,
+      "balance": 14.9423076923
+    },
+    {
+      "hora": 21,
+      "entradas": 15.3576923077,
+      "salidas": 9.0346153846,
+      "balance": 6.3230769231
+    },
+    {
+      "hora": 22,
+      "entradas": 8.1576923077,
+      "salidas": 5.7653846154,
+      "balance": 2.3923076923
+    },
+    {
+      "hora": 23,
+      "entradas": 1.2923076923,
+      "salidas": 2.1846153846,
+      "balance": -0.8923076923
+    }
+  ],
+  "correlacion": [
+    {
+      "variable": "entradas",
+      "entradas": 1.0,
+      "salidas": 0.738390717,
+      "balance": 0.4100238876,
+      "entradas_lag_1h": 0.7172775719,
+      "entradas_lag_24h": 0.7076233476,
+      "entradas_lag_168h": 0.7824436249,
+      "entradas_roll_mean_6h": 0.5802181967,
+      "salidas_lag_1h": 0.6241032586,
+      "salidas_lag_24h": 0.5864204271,
+      "salidas_lag_168h": 0.6414466647,
+      "salidas_roll_mean_6h": 0.5526248912,
+      "balance_lag_1h": 0.1663277185,
+      "balance_lag_24h": 0.2036779044,
+      "balance_lag_168h": 0.2344499313,
+      "balance_roll_mean_6h": 0.1370996557
+    },
+    {
+      "variable": "salidas",
+      "entradas": 0.738390717,
+      "salidas": 1.0,
+      "balance": -0.3123209152,
+      "entradas_lag_1h": 0.6286598422,
+      "entradas_lag_24h": 0.5876717381,
+      "entradas_lag_168h": 0.6409550249,
+      "entradas_roll_mean_6h": 0.5165952084,
+      "salidas_lag_1h": 0.663542973,
+      "salidas_lag_24h": 0.6786348332,
+      "salidas_lag_168h": 0.7461193391,
+      "salidas_roll_mean_6h": 0.5505371373,
+      "balance_lag_1h": -0.0118483165,
+      "balance_lag_24h": -0.0900015747,
+      "balance_lag_168h": -0.1061783967,
+      "balance_roll_mean_6h": 0.0095495082
+    },
+    {
+      "variable": "balance",
+      "entradas": 0.4100238876,
+      "salidas": -0.3123209152,
+      "balance": 1.0,
+      "entradas_lag_1h": 0.1601667543,
+      "entradas_lag_24h": 0.2020025367,
+      "entradas_lag_168h": 0.2353359729,
+      "entradas_roll_mean_6h": 0.1186587553,
+      "salidas_lag_1h": -0.0182647952,
+      "salidas_lag_24h": -0.0917592917,
+      "salidas_lag_168h": -0.1055161784,
+      "salidas_roll_mean_6h": 0.0338828809,
+      "balance_lag_1h": 0.2503272852,
+      "balance_lag_24h": 0.4086423372,
+      "balance_lag_168h": 0.4738691014,
+      "balance_roll_mean_6h": 0.180214183
+    },
+    {
+      "variable": "entradas_lag_1h",
+      "entradas": 0.7172775719,
+      "salidas": 0.6286598422,
+      "balance": 0.1601667543,
+      "entradas_lag_1h": 1.0,
+      "entradas_lag_24h": 0.6428992288,
+      "entradas_lag_168h": 0.6984233375,
+      "entradas_roll_mean_6h": 0.7331950706,
+      "salidas_lag_1h": 0.7383925875,
+      "salidas_lag_24h": 0.5503343165,
+      "salidas_lag_168h": 0.5946606689,
+      "salidas_roll_mean_6h": 0.6518590665,
+      "balance_lag_1h": 0.410019862,
+      "balance_lag_24h": 0.1613103266,
+      "balance_lag_168h": 0.1794140896,
+      "balance_roll_mean_6h": 0.2626060201
+    },
+    {
+      "variable": "entradas_lag_24h",
+      "entradas": 0.7076233476,
+      "salidas": 0.5876717381,
+      "balance": 0.2020025367,
+      "entradas_lag_1h": 0.6428992288,
+      "entradas_lag_24h": 1.0,
+      "entradas_lag_168h": 0.6968653943,
+      "entradas_roll_mean_6h": 0.5498972301,
+      "salidas_lag_1h": 0.5536459518,
+      "salidas_lag_24h": 0.7383692193,
+      "salidas_lag_168h": 0.5808213106,
+      "salidas_roll_mean_6h": 0.5223770851,
+      "balance_lag_1h": 0.1568445258,
+      "balance_lag_24h": 0.4100246255,
+      "balance_lag_168h": 0.1959252721,
+      "balance_roll_mean_6h": 0.132567402
+    },
+    {
+      "variable": "entradas_lag_168h",
+      "entradas": 0.7824436249,
+      "salidas": 0.6409550249,
+      "balance": 0.2353359729,
+      "entradas_lag_1h": 0.6984233375,
+      "entradas_lag_24h": 0.6968653943,
+      "entradas_lag_168h": 1.0,
+      "entradas_roll_mean_6h": 0.5684235706,
+      "salidas_lag_1h": 0.5953554311,
+      "salidas_lag_24h": 0.5794920945,
+      "salidas_lag_168h": 0.7380032954,
+      "salidas_roll_mean_6h": 0.5362764324,
+      "balance_lag_1h": 0.1786490467,
+      "balance_lag_24h": 0.1978941498,
+      "balance_lag_168h": 0.4101868898,
+      "balance_roll_mean_6h": 0.1441486137
+    },
+    {
+      "variable": "entradas_roll_mean_6h",
+      "entradas": 0.5802181967,
+      "salidas": 0.5165952084,
+      "balance": 0.1186587553,
+      "entradas_lag_1h": 0.7331950706,
+      "entradas_lag_24h": 0.5498972301,
+      "entradas_lag_168h": 0.5684235706,
+      "entradas_roll_mean_6h": 1.0,
+      "salidas_lag_1h": 0.6196913577,
+      "salidas_lag_24h": 0.4817417673,
+      "salidas_lag_168h": 0.4982621213,
+      "salidas_roll_mean_6h": 0.8769033877,
+      "balance_lag_1h": 0.194717481,
+      "balance_lag_24h": 0.1230727226,
+      "balance_lag_168h": 0.126709279,
+      "balance_roll_mean_6h": 0.3815566204
+    },
+    {
+      "variable": "salidas_lag_1h",
+      "entradas": 0.6241032586,
+      "salidas": 0.663542973,
+      "balance": -0.0182647952,
+      "entradas_lag_1h": 0.7383925875,
+      "entradas_lag_24h": 0.5536459518,
+      "entradas_lag_168h": 0.5953554311,
+      "entradas_roll_mean_6h": 0.6196913577,
+      "salidas_lag_1h": 1.0,
+      "salidas_lag_24h": 0.5996099035,
+      "salidas_lag_168h": 0.6475085566,
+      "salidas_roll_mean_6h": 0.711948144,
+      "balance_lag_1h": -0.3123224731,
+      "balance_lag_24h": -0.0310551897,
+      "balance_lag_168h": -0.0370905665,
+      "balance_roll_mean_6h": -0.0876607927
+    },
+    {
+      "variable": "salidas_lag_24h",
+      "entradas": 0.5864204271,
+      "salidas": 0.6786348332,
+      "balance": -0.0917592917,
+      "entradas_lag_1h": 0.5503343165,
+      "entradas_lag_24h": 0.7383692193,
+      "entradas_lag_168h": 0.5794920945,
+      "entradas_roll_mean_6h": 0.4817417673,
+      "salidas_lag_1h": 0.5996099035,
+      "salidas_lag_24h": 1.0,
+      "salidas_lag_168h": 0.6666657418,
+      "salidas_roll_mean_6h": 0.5239011315,
+      "balance_lag_1h": -0.0357157753,
+      "balance_lag_24h": -0.3123504293,
+      "balance_lag_168h": -0.0853113123,
+      "balance_roll_mean_6h": -0.0113010477
+    },
+    {
+      "variable": "salidas_lag_168h",
+      "entradas": 0.6414466647,
+      "salidas": 0.7461193391,
+      "balance": -0.1055161784,
+      "entradas_lag_1h": 0.5946606689,
+      "entradas_lag_24h": 0.5808213106,
+      "entradas_lag_168h": 0.7380032954,
+      "entradas_roll_mean_6h": 0.4982621213,
+      "salidas_lag_1h": 0.6475085566,
+      "salidas_lag_24h": 0.6666657418,
+      "salidas_lag_168h": 1.0,
+      "salidas_roll_mean_6h": 0.5404371173,
+      "balance_lag_1h": -0.0380561234,
+      "balance_lag_24h": -0.0834638459,
+      "balance_lag_168h": -0.31269669,
+      "balance_roll_mean_6h": -0.0089383694
+    },
+    {
+      "variable": "salidas_roll_mean_6h",
+      "entradas": 0.5526248912,
+      "salidas": 0.5505371373,
+      "balance": 0.0338828809,
+      "entradas_lag_1h": 0.6518590665,
+      "entradas_lag_24h": 0.5223770851,
+      "entradas_lag_168h": 0.5362764324,
+      "entradas_roll_mean_6h": 0.8769033877,
+      "salidas_lag_1h": 0.711948144,
+      "salidas_lag_24h": 0.5239011315,
+      "salidas_lag_168h": 0.5404371173,
+      "salidas_roll_mean_6h": 1.0,
+      "balance_lag_1h": -0.0446351807,
+      "balance_lag_24h": 0.0272897686,
+      "balance_lag_168h": 0.0244582245,
+      "balance_roll_mean_6h": -0.1097137662
+    },
+    {
+      "variable": "balance_lag_1h",
+      "entradas": 0.1663277185,
+      "salidas": -0.0118483165,
+      "balance": 0.2503272852,
+      "entradas_lag_1h": 0.410019862,
+      "entradas_lag_24h": 0.1568445258,
+      "entradas_lag_168h": 0.1786490467,
+      "entradas_roll_mean_6h": 0.194717481,
+      "salidas_lag_1h": -0.3123224731,
+      "salidas_lag_24h": -0.0357157753,
+      "salidas_lag_168h": -0.0380561234,
+      "salidas_roll_mean_6h": -0.0446351807,
+      "balance_lag_1h": 1.0,
+      "balance_lag_24h": 0.2692370304,
+      "balance_lag_168h": 0.302902276,
+      "balance_roll_mean_6h": 0.4884889182
+    },
+    {
+      "variable": "balance_lag_24h",
+      "entradas": 0.2036779044,
+      "salidas": -0.0900015747,
+      "balance": 0.4086423372,
+      "entradas_lag_1h": 0.1613103266,
+      "entradas_lag_24h": 0.4100246255,
+      "entradas_lag_168h": 0.1978941498,
+      "entradas_roll_mean_6h": 0.1230727226,
+      "salidas_lag_1h": -0.0310551897,
+      "salidas_lag_24h": -0.3123504293,
+      "salidas_lag_168h": -0.0834638459,
+      "salidas_roll_mean_6h": 0.0272897686,
+      "balance_lag_1h": 0.2692370304,
+      "balance_lag_24h": 1.0,
+      "balance_lag_168h": 0.3913613541,
+      "balance_roll_mean_6h": 0.2020206351
+    },
+    {
+      "variable": "balance_lag_168h",
+      "entradas": 0.2344499313,
+      "salidas": -0.1061783967,
+      "balance": 0.4738691014,
+      "entradas_lag_1h": 0.1794140896,
+      "entradas_lag_24h": 0.1959252721,
+      "entradas_lag_168h": 0.4101868898,
+      "entradas_roll_mean_6h": 0.126709279,
+      "salidas_lag_1h": -0.0370905665,
+      "salidas_lag_24h": -0.0853113123,
+      "salidas_lag_168h": -0.31269669,
+      "salidas_roll_mean_6h": 0.0244582245,
+      "balance_lag_1h": 0.302902276,
+      "balance_lag_24h": 0.3913613541,
+      "balance_lag_168h": 1.0,
+      "balance_roll_mean_6h": 0.2149858116
+    },
+    {
+      "variable": "balance_roll_mean_6h",
+      "entradas": 0.1370996557,
+      "salidas": 0.0095495082,
+      "balance": 0.180214183,
+      "entradas_lag_1h": 0.2626060201,
+      "entradas_lag_24h": 0.132567402,
+      "entradas_lag_168h": 0.1441486137,
+      "entradas_roll_mean_6h": 0.3815566204,
+      "salidas_lag_1h": -0.0876607927,
+      "salidas_lag_24h": -0.0113010477,
+      "salidas_lag_168h": -0.0089383694,
+      "salidas_roll_mean_6h": -0.1097137662,
+      "balance_lag_1h": 0.4884889182,
+      "balance_lag_24h": 0.2020206351,
+      "balance_lag_168h": 0.2149858116,
+      "balance_roll_mean_6h": 1.0
+    }
+  ]
+}

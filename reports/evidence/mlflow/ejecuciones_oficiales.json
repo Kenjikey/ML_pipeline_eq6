@@ -1,0 +1,228 @@
+[
+  {
+    "run_id": "90f8c0a4e5b1499aaabe18093046ef96",
+    "estado": "FINISHED",
+    "etapa": "dataset",
+    "parametros": {
+      "anio": "2023",
+      "frecuencia": "1h",
+      "meses_requeridos": "12",
+      "eliminar_atipicos_por_duracion": "False"
+    },
+    "metricas": {
+      "filas_entrada": 4293115.0,
+      "descartados_identificadores_invalidos": 0.0,
+      "descartados_fechas_invalidas": 0.0,
+      "descartados_duracion_no_positiva": 17945.0,
+      "descartados_fuera_del_anio": 5.0,
+      "descartados_duplicados": 0.0,
+      "filas_limpias": 4275165.0,
+      "descartados_total": 17950.0,
+      "duracion_atipica_iqr": 89523.0,
+      "viajes_menores_60s_misma_estacion": 156621.0,
+      "viajes_mayores_24h": 12.0,
+      "archivos_entrada": 12.0,
+      "filas_salida": 3144840.0,
+      "columnas_salida": 5.0,
+      "estaciones": 359.0,
+      "estacion_meses_sin_movimientos": 572.0,
+      "entradas_total": 4275165.0,
+      "salidas_total": 4275165.0,
+      "horas_sin_movimientos": 1526581.0
+    },
+    "tags": {
+      "mlflow.user": "villegas",
+      "mlflow.source.name": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/mibici/dataset.py",
+      "mlflow.source.type": "LOCAL",
+      "mlflow.source.git.commit": "758c4e384c28dbc046e2548c5ee9b4b366e70937",
+      "mlflow.source.git.branch": "main",
+      "mlflow.source.git.repoURL": "https://github.com/Kenjikey/ML_pipeline_eq6.git",
+      "mlflow.runName": "dataset",
+      "etapa": "dataset",
+      "responsable_del_flujo": "Leo",
+      "version_datos": "v2_fechas_explicitas",
+      "uso_entrega": "oficial_fase1",
+      "codigo_commit": "758c4e384c28dbc046e2548c5ee9b4b366e70937",
+      "codigo_cambios_locales": "False"
+    },
+    "datasets": [
+      {
+        "nombre": "raw",
+        "digest_mlflow": "b3320abb",
+        "source": {
+          "uri": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/raw"
+        },
+        "contexto": [
+          {
+            "key": "mlflow.data.context",
+            "value": "viajes_limpios"
+          }
+        ]
+      },
+      {
+        "nombre": "hourly_balance_2023",
+        "digest_mlflow": "b02e9243",
+        "source": {
+          "uri": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/interim/hourly_balance_2023.parquet"
+        },
+        "contexto": [
+          {
+            "key": "mlflow.data.context",
+            "value": "salida"
+          }
+        ]
+      }
+    ],
+    "artefactos_raiz": [
+      "calidad",
+      "codigo",
+      "entorno.json",
+      "entorno_requirements.txt",
+      "versionado"
+    ]
+  },
+  {
+    "run_id": "f2f405cdfbd142b4971277ebd2e067bc",
+    "estado": "FINISHED",
+    "etapa": "features",
+    "parametros": {
+      "lags_horas": "[1, 2, 24, 168]",
+      "ventanas_horas": "[3, 6]",
+      "desplazamiento_rolling": "1",
+      "horas_pico": "7,8,9,18,19,20"
+    },
+    "metricas": {
+      "filas_entrada": 3144840.0,
+      "filas_salida": 3084528.0,
+      "columnas_salida": 33.0,
+      "filas_sin_historial": 60312.0,
+      "nulos_salida": 0.0,
+      "estaciones": 359.0
+    },
+    "tags": {
+      "mlflow.user": "villegas",
+      "mlflow.source.name": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/mibici/features.py",
+      "mlflow.source.type": "LOCAL",
+      "mlflow.source.git.commit": "758c4e384c28dbc046e2548c5ee9b4b366e70937",
+      "mlflow.source.git.branch": "main",
+      "mlflow.source.git.repoURL": "https://github.com/Kenjikey/ML_pipeline_eq6.git",
+      "mlflow.runName": "features",
+      "etapa": "features",
+      "responsable_del_flujo": "Leo",
+      "version_datos": "v2_fechas_explicitas",
+      "uso_entrega": "oficial_fase1",
+      "codigo_commit": "758c4e384c28dbc046e2548c5ee9b4b366e70937",
+      "codigo_cambios_locales": "True"
+    },
+    "datasets": [
+      {
+        "nombre": "hourly_balance_2023",
+        "digest_mlflow": "b02e9243",
+        "source": {
+          "uri": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/interim/hourly_balance_2023.parquet"
+        },
+        "contexto": [
+          {
+            "key": "mlflow.data.context",
+            "value": "entrada"
+          }
+        ]
+      },
+      {
+        "nombre": "features_2023",
+        "digest_mlflow": "5adeba4a",
+        "source": {
+          "uri": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/processed/features_2023.parquet"
+        },
+        "contexto": [
+          {
+            "key": "mlflow.data.context",
+            "value": "salida"
+          }
+        ]
+      }
+    ],
+    "artefactos_raiz": [
+      "calidad",
+      "codigo",
+      "entorno.json",
+      "entorno_requirements.txt",
+      "versionado"
+    ]
+  },
+  {
+    "run_id": "2f70489852114915b5c5054611733e78",
+    "estado": "FINISHED",
+    "etapa": "plots",
+    "parametros": {
+      "estacion_ejemplo": "51",
+      "correlacion_meses": "1-9",
+      "comparacion_temporal": "promedio_diario",
+      "periodo_descriptivo": "2023"
+    },
+    "metricas": {
+      "filas_hourly": 3144840.0,
+      "columnas_hourly": 5.0,
+      "filas_features": 3084528.0,
+      "columnas_features": 33.0,
+      "estaciones": 359.0,
+      "dias_observados": 365.0,
+      "entradas_total": 4275165.0,
+      "salidas_total": 4275165.0,
+      "porcentaje_sin_movimientos": 48.54240597295888,
+      "porcentaje_balance_cero_con_movimientos": 8.853709568690299,
+      "estacion_meses_sin_movimientos": 572.0,
+      "filas_correlacion_entrenamiento": 2291856.0,
+      "estacion_ejemplo": 51.0
+    },
+    "tags": {
+      "mlflow.user": "villegas",
+      "mlflow.source.name": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/.venv/lib/python3.14/site-packages/ipykernel_launcher.py",
+      "mlflow.source.type": "NOTEBOOK",
+      "mlflow.runName": "plots",
+      "etapa": "plots",
+      "responsable_del_flujo": "Leo",
+      "version_datos": "v2_fechas_explicitas",
+      "uso_entrega": "oficial_fase1",
+      "codigo_commit": "758c4e384c28dbc046e2548c5ee9b4b366e70937",
+      "codigo_cambios_locales": "True"
+    },
+    "datasets": [
+      {
+        "nombre": "hourly_balance_2023",
+        "digest_mlflow": "b02e9243",
+        "source": {
+          "uri": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/interim/hourly_balance_2023.parquet"
+        },
+        "contexto": [
+          {
+            "key": "mlflow.data.context",
+            "value": "eda_horario"
+          }
+        ]
+      },
+      {
+        "nombre": "features_2023",
+        "digest_mlflow": "ffbdea68",
+        "source": {
+          "uri": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/processed/features_2023.parquet"
+        },
+        "contexto": [
+          {
+            "key": "mlflow.data.context",
+            "value": "eda_correlacion"
+          }
+        ]
+      }
+    ],
+    "artefactos_raiz": [
+      "calidad",
+      "codigo",
+      "eda",
+      "entorno.json",
+      "entorno_requirements.txt",
+      "figuras",
+      "versionado"
+    ]
+  }
+]

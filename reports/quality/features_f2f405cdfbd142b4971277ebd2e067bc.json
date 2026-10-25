@@ -1,0 +1,35 @@
+{
+  "entradas": [
+    {
+      "archivo": "hourly_balance_2023.parquet",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/interim/hourly_balance_2023.parquet",
+      "sha256": "bbd1172e880c4f7ddc9d4060e83ebb145a656c16b0dd90c71b69e4df0c2435a8"
+    }
+  ],
+  "metricas": {
+    "filas_entrada": 3144840,
+    "filas_salida": 3084528,
+    "columnas_salida": 33,
+    "filas_sin_historial": 60312,
+    "nulos_salida": 0,
+    "estaciones": 359
+  },
+  "reglas": [
+    "Validar claves únicas, continuidad horaria y balance = entradas - salidas.",
+    "Calendario y seno/coseno de hora y día de la semana.",
+    "Retardos de 1, 2, 24 y 168 horas por estación.",
+    "Medias de las 3 y 6 horas anteriores por estación; excluir la hora actual.",
+    "Eliminar solo filas sin historial suficiente para estas variables.",
+    "Conservar unidades de conteo; sin escalado ni PCA para facilitar interpretación."
+  ],
+  "salida": {
+    "archivo": "features_2023.parquet",
+    "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/processed/features_2023.parquet",
+    "sha256": "3630380d18c0810b708f8b407a722bb32640770ef2378a1e21523015e12ccc5a"
+  },
+  "intervalo_salida": {
+    "inicio": "2023-01-08T00:00:00",
+    "fin": "2023-12-31T23:00:00"
+  },
+  "run_id": "f2f405cdfbd142b4971277ebd2e067bc"
+}

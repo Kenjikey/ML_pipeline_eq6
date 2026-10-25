@@ -1,0 +1,91 @@
+VERSIONADO OFICIAL DE DATOS Y EVIDENCIA — FASE 1
+Fecha de revisión: 25 de octubre de 2026
+
+VERSIÓN VIGENTE
+La entrega debe usar hourly_balance_2023_v2 y features_2023_v2, registrados en
+manifests/mibici_processed_v2.json. El origen compartido es raw_v1, registrado
+en manifests/mibici_original.json. No se modificó el archivo original ni los CSV.
+
+Código reproducible: 758c4e384c28dbc046e2548c5ee9b4b366e70937.
+Este commit contiene el lector de fechas explícitas, las funciones de EDA y las pruebas.
+La ejecución del notebook agrega salidas al archivo, sin cambiar las fuentes de sus celdas.
+
+Ubicación compartida:
+https://drive.google.com/drive/folders/1HEPgivmaLSutJSzXo6p6UKQl_mZ0-NTJ
+Los enlaces de cada archivo están en su manifiesto. Los archivos heredaron el acceso
+de la carpeta indicada; no se modificaron los permisos de uso compartido.
+Git contiene código, manifiestos, reportes, figuras y capturas; los Parquet y MLflow
+permanecen fuera de Git. La base SQLite y la carpeta de artefactos siguen siendo locales.
+
+QUÉ IDENTIFICA EL MANIFIESTO
+Cada registro conserva los siete campos acordados: id, archivo, sha256, url, origen,
+transformaciones y commit. El campo origen referencia identificadores de otros registros.
+El SHA-256 identifica todos los bytes del archivo, independientemente de su ubicación.
+La huella corta de MLflow identifica el dataframe registrado; no es el SHA-256 del Parquet.
+El EDA solo lee estos datasets y genera estadísticas y figuras: no necesita inventar una
+versión nueva de datos. Su ejecución registra los dos archivos de entrada y sus hashes.
+
+Los scripts mantienen sus nombres de trabajo hourly_balance_2023.parquet y
+features_2023.parquet. Las copias con sufijo _v2 son idénticas en contenido y se reservaron
+para el intercambio en Drive. El EDA usa los nombres de trabajo; se verificó igualdad de hashes.
+Para reproducir desde Drive, verificar los SHA-256 y copiar los archivos a esos nombres
+de trabajo en data/interim/ y data/processed/, respectivamente, antes de ejecutar el EDA.
+
+EJECUCIONES OFICIALES EN MLFLOW
+Servidor local: http://127.0.0.1:5001
+Experimento: mibici_balance_estaciones_2023
+Filtro de interfaz: tags.uso_entrega = 'oficial_fase1'
+
+Limpieza y agregación (dataset): 90f8c0a4e5b1499aaabe18093046ef96
+Preparación (features): f2f405cdfbd142b4971277ebd2e067bc
+Exploración (plots): 2f70489852114915b5c5054611733e78
+
+Los reportes completos están en reports/quality/ y reports/eda/.
+Las capturas y el extracto de la API quedan en reports/evidence/.
+Los manifiestos y esta nota se adjuntan también como artefactos de las ejecuciones oficiales.
+
+CIFRAS DEFINITIVAS
+4,293,115 viajes de entrada.
+17,945 descartados por duración no positiva.
+5 descartados porque inicio o fin cruzan el año seleccionado.
+0 descartes por identificadores inválidos, fechas no interpretables o duplicados.
+4,275,165 viajes conservados.
+359 estaciones y 3,144,840 filas horarias con 5 columnas.
+3,084,528 filas preparadas con 33 columnas totales y 0 nulos.
+48.5424% de combinaciones estación-hora sin entradas ni salidas.
+8.8537% adicional con balance cero, pero con movimientos en ambos sentidos.
+572 combinaciones estación-mes sin movimientos registrados.
+89,523 duraciones atípicas por IQR, conservadas; 12 viajes de más de 24 horas.
+
+HISTORIAL Y RECONCILIACIÓN
+1. El lector inicial aplicaba pd.to_datetime(errors='coerce') sobre fechas concatenadas,
+   cuyo primer formato era ISO. Noviembre usa día/mes/año con barras; sus 384,464 filas
+   quedaban con fechas no reconocidas. La reproducción del lector inicial arrojó
+   exactamente 3,908,646 viajes conservados: 4,293,115 - 384,464 - 5.
+   Los manifiestos v1 se conservan como registros históricos. Sus transformaciones
+   declaradas y el commit 6c82d9c no se han podido verificar contra este repositorio.
+   No se deben atribuir esas declaraciones a la versión v2.
+
+2. La primera revisión local usó formato mixto sin fijar el orden día/mes.
+   Recuperó noviembre, pero trasladó fechas ambiguas a otros meses. Produjo el conteo
+   4,275,117 y se conserva únicamente para auditoría:
+   dataset 80f4168ba16e4edd8ffb474279fceb20;
+   features 4a7b9060d1c3435aa21d4d4a85a74de1.
+   Ambas ejecuciones están marcadas como historico_fechas_ambiguas en MLflow.
+
+3. La versión v2 distingue formatos explícitos y valida el mes de origen de cada archivo.
+   Corrige la distribución temporal y conserva 48 viajes adicionales respecto de la
+   revisión local. La diferencia en duración modifica también los conteos de atípicos.
+   Las gráficas y cifras oficiales proceden exclusivamente de esta versión.
+
+El README se conservó por instrucción del usuario y describe la primera revisión local.
+La presentación ejecutiva y el PDF deben tomar las cifras definitivas de esta nota y
+reports/eda/, no copiar automáticamente resultados anteriores del README, del antiguo
+reporte técnico, de documentos previos o de las métricas del modelo entrenado con v1.
+No se reentrenaron modelos y no se atribuyen sus métricas a los nuevos Parquet.
+
+RESPONSABILIDADES
+Leo permanece como responsable del flujo inicial. Iván integró y ejecutó la revisión
+local de calidad, fechas, EDA y versionado con apoyo de OpenAI Codex para generación
+de código, depuración y documentación. No se atribuyeron a Leo estas modificaciones
+nuevas ni se crearon commits en su nombre.

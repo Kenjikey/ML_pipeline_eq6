@@ -1,0 +1,70 @@
+{
+  "metricas": {
+    "filas_hourly": 3144840,
+    "columnas_hourly": 5,
+    "filas_features": 3084528,
+    "columnas_features": 33,
+    "estaciones": 359,
+    "dias_observados": 365,
+    "entradas_total": 4275165,
+    "salidas_total": 4275165,
+    "porcentaje_sin_movimientos": 48.54240597295888,
+    "porcentaje_balance_cero_con_movimientos": 8.853709568690299,
+    "estacion_meses_sin_movimientos": 572,
+    "filas_correlacion_entrenamiento": 2291856,
+    "estacion_ejemplo": 51
+  },
+  "entradas": [
+    {
+      "archivo": "hourly_balance_2023.parquet",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/interim/hourly_balance_2023.parquet",
+      "sha256": "bbd1172e880c4f7ddc9d4060e83ebb145a656c16b0dd90c71b69e4df0c2435a8"
+    },
+    {
+      "archivo": "features_2023.parquet",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/processed/features_2023.parquet",
+      "sha256": "3630380d18c0810b708f8b407a722bb32640770ef2378a1e21523015e12ccc5a"
+    }
+  ],
+  "figuras": [
+    {
+      "archivo": "01_flujo_horario_pico.png",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/reports/figures/01_flujo_horario_pico.png",
+      "sha256": "792f7183103a4ffc14d719bf6c8c60ee18a963b8ffe12253653ff1e6a7f69475"
+    },
+    {
+      "archivo": "02_demanda_dia_semana.png",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/reports/figures/02_demanda_dia_semana.png",
+      "sha256": "b5de8e857f4e97ec7d6b15ea1ae728af4c077ce1cfdc37645daf4534e62c27b3"
+    },
+    {
+      "archivo": "03_top_estaciones_desbalance.png",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/reports/figures/03_top_estaciones_desbalance.png",
+      "sha256": "fa682c047bf887d3ae338e74f31bdbbb74224d79bf155370a7d937291b8af6b3"
+    },
+    {
+      "archivo": "04_dinamica_estacion_51.png",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/reports/figures/04_dinamica_estacion_51.png",
+      "sha256": "6cc60df14be7f1fb5bb73545d99926e108dcd83349a911f5b6f52b1d833f233f"
+    },
+    {
+      "archivo": "05_matriz_correlacion_lags.png",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/reports/figures/05_matriz_correlacion_lags.png",
+      "sha256": "0f57cf204c5965c837ffa5fad32ad0f201a580787bb7b78359b81495bea31c81"
+    },
+    {
+      "archivo": "06_flujo_mensual.png",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/reports/figures/06_flujo_mensual.png",
+      "sha256": "a546cdb8a2fdc3770437f0ffb6aaa410132d029b20386cd25ec6352eee4d6313"
+    }
+  ],
+  "tablas": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/reports/eda/tablas_2f70489852114915b5c5054611733e78.json",
+  "hallazgos": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/reports/eda/hallazgos_2f70489852114915b5c5054611733e78.txt",
+  "reglas": [
+    "EDA anual descriptivo; no selecciona automáticamente características.",
+    "Correlaciones de enero a septiembre, sin usar octubre–diciembre.",
+    "Balance cero se distingue de entradas y salidas simultáneamente cero.",
+    "Desbalance histórico no equivale a inventario ni a urgencia operativa."
+  ],
+  "run_id": "2f70489852114915b5c5054611733e78"
+}
