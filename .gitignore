@@ -195,6 +195,6 @@ data/
 mlruns/
 mlflow.db
 mlflow.db-*
-mlartifacts/
+#mlartifacts/
 models/*.joblib
 .DS_Store
