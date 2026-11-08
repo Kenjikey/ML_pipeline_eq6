@@ -2,9 +2,9 @@
 ## Reporte Técnico de Avance · Fase 2 (Gestión del Proyecto de Machine Learning)
 
 **Equipo 6:**  
-- **Leonel Matus Climaco** 
-- **Kenji Ramírez** 
-- **Iván V.** 
+- **A01797300 Iván David Villegas Quintero** 
+- **A01797557 Leonel Matus Climaco** 
+- **A01796851 Kenji Omar Ramírez Álvarez** 
 
 **Repositorio GitHub:** `https://github.com/Kenjikey/ML_pipeline_eq6.git`  
 **Rama Activa:** `feature/mlops-pipeline-2023`  
