@@ -1,171 +1,277 @@
-# MiBici
+# MiBici — Pipeline de preparación de datos
 
-<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
-    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
-</a>
+Proyecto del **Equipo 6 · Operaciones de aprendizaje automático (Grupo 10)** para analizar y anticipar el balance de entradas y salidas por estación del sistema de bicicletas públicas MiBici.
 
-Anticipar el balance de entradas y salidas por estacion de MiBici
+El repositorio contiene el flujo de la **fase 1** para integrar los archivos mensuales de viajes de 2023, validar y limpiar los registros, construir el balance horario por estación y preparar variables temporales para etapas posteriores de modelado.
 
-## Flujo de datos de fase 1
+## Contenido
 
-Flujo base de carga, preparación, ajustes de calidad y trazabilidad.
+- [Alcance del flujo](#alcance-del-flujo)
+- [Estructura del repositorio](#estructura-del-repositorio)
+- [Requisitos e instalación](#requisitos-e-instalación)
+- [Preparar los datos](#preparar-los-datos)
+- [Ejecutar el pipeline](#ejecutar-el-pipeline)
+- [Reglas de calidad y transformaciones](#reglas-de-calidad-y-transformaciones)
+- [Ejecución verificada](#ejecución-verificada)
+- [Pruebas](#pruebas)
+- [Trazabilidad y reproducibilidad](#trazabilidad-y-reproducibilidad)
+- [Limitaciones conocidas](#limitaciones-conocidas)
 
-### Ejecución local
+## Alcance del flujo
 
-Desde la raíz del repositorio, con el entorno virtual activo:
+El flujo implementado y documentado en esta fase se ejecuta en dos etapas:
 
-```bash
-python -m pip install -r requirements.txt
-python -m pytest tests -q
+| Etapa | Módulo | Responsabilidad |
+|---|---|---|
+| 1. Integración y calidad | `mibici.dataset` | Lee los archivos mensuales, valida los registros, aplica reglas de limpieza, genera el balance horario y registra la ejecución y sus reportes en MLflow. |
+| 2. Ingeniería de características | `mibici.features` | Construye variables de calendario, codificaciones cíclicas, retardos y promedios históricos por estación; valida la continuidad temporal y evita usar información de la hora objetivo. |
+
+Esta fase prepara conjuntos de datos trazables para experimentos posteriores. La ejecución verificada descrita aquí corresponde a `dataset` y `features`; no debe interpretarse como evidencia de un modelo predictivo ya entrenado o desplegado.
+
+## Estructura del repositorio
+
+La estructura publicada en la rama principal es:
+
+```text
+ML_pipeline_eq6/
+├── docs/             # Documentación del proyecto
+├── manifests/        # Manifiestos de versiones de datos
+├── mibici/           # Código fuente del pipeline
+├── models/           # Directorio para artefactos relacionados con modelos
+├── notebooks/        # Notebooks de exploración y análisis
+├── references/       # Material de referencia del proyecto
+├── reports/          # Reportes generados por los procesos
+├── tests/            # Pruebas automatizadas
+├── .gitignore
+├── Makefile
+├── pyproject.toml
+├── README.md
+├── requirements.txt
+└── setup.cfg
 ```
 
-Colocar los 12 archivos originales de 2023 directamente en `data/raw/`, con nombres
-`datos_abiertos_2023_01.csv` a `datos_abiertos_2023_12.csv`. Si falta alguno, el flujo se
-detiene para evitar representar un mes no disponible mediante ceros.
+Los datos de entrada, las salidas generadas, la base de datos local de MLflow y sus artefactos no se versionan en Git. Las carpetas correspondientes se crean localmente cuando se ejecuta el flujo.
 
-En una terminal iniciar MLflow y mantenerla abierta:
+## Requisitos e instalación
+
+Se requiere Python y Git. La versión de Python y las dependencias del proyecto deben respetar la configuración de `pyproject.toml` y `requirements.txt`.
+
+1. Clonar el repositorio y entrar al directorio:
+
+   ```bash
+   git clone https://github.com/Kenjikey/ML_pipeline_eq6.git
+   cd ML_pipeline_eq6
+   ```
+
+2. Crear y activar un entorno virtual:
+
+   **Windows (PowerShell):**
+
+   ```powershell
+   python -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   ```
+
+   **Linux o macOS:**
+
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate
+   ```
+
+3. Instalar las dependencias:
+
+   ```bash
+   python -m pip install --upgrade pip
+   python -m pip install -r requirements.txt
+   ```
+
+4. Comprobar que las pruebas pasan:
+
+   ```bash
+   python -m pytest tests -q
+   ```
+
+## Preparar los datos
+
+Coloca en `data/raw/` los **12 archivos CSV originales de 2023**, con estos nombres:
+
+```text
+datos_abiertos_2023_01.csv
+datos_abiertos_2023_02.csv
+datos_abiertos_2023_03.csv
+datos_abiertos_2023_04.csv
+datos_abiertos_2023_05.csv
+datos_abiertos_2023_06.csv
+datos_abiertos_2023_07.csv
+datos_abiertos_2023_08.csv
+datos_abiertos_2023_09.csv
+datos_abiertos_2023_10.csv
+datos_abiertos_2023_11.csv
+datos_abiertos_2023_12.csv
+```
+
+El flujo espera los 12 meses. Si falta un archivo, el proceso se detiene para evitar tratar un mes no disponible como si tuviera cero viajes. Los datos originales no están incluidos en el repositorio: deben estar disponibles localmente antes de ejecutar las etapas.
+
+## Ejecutar el pipeline
+
+Los comandos siguientes se ejecutan desde la raíz del repositorio y con el entorno virtual activo.
+
+### 1. Iniciar MLflow
+
+En una terminal, inicia el servidor local y déjalo ejecutándose:
 
 ```bash
+mlflow ui \
+  --host 127.0.0.1 \
+  --port 5001 \
+  --workers 1 \
+  --backend-store-uri sqlite:///mlflow.db \
+  --artifacts-destination ./mlartifacts
+```
+
+En Windows PowerShell puedes ejecutar el mismo comando en una sola línea:
+
+```powershell
 mlflow ui --host 127.0.0.1 --port 5001 --workers 1 --backend-store-uri sqlite:///mlflow.db --artifacts-destination ./mlartifacts
 ```
 
-En otra terminal, activar el mismo entorno virtual y ejecutar:
+### 2. Ejecutar las etapas
+
+En otra terminal, con el mismo entorno virtual activo:
 
 ```bash
 python -m mibici.dataset
 python -m mibici.features
 ```
 
-Abrir <http://127.0.0.1:5001>. En el experimento `mibici_balance_estaciones_2023` deben
-aparecer dos ejecuciones finalizadas: `dataset` y `features`. Cada una registra reglas,
-conteos, metadatos de los datasets, fuentes del código, entorno y un reporte de calidad.
-Los reportes locales quedan en `reports/quality/`, con el identificador de la ejecución
-en el nombre. Las rutas, SHA-256 y el `run_id` permiten relacionar las etapas.
-La huella que muestra MLflow es distinta del SHA-256 del archivo; se conservan ambas.
+### 3. Consultar los resultados
 
-El servidor predeterminado usa el puerto 5001. Para otro servidor, definir
-`MLFLOW_TRACKING_URI` o pasar `--tracking-uri` a cada etapa. Los datos, la base de MLflow
-y sus artefactos permanecen locales y están excluidos de Git.
+Abre [http://127.0.0.1:5001](http://127.0.0.1:5001) y consulta el experimento `mibici_balance_estaciones_2023`. Una ejecución correcta genera dos runs finalizados:
 
-### Reglas y justificación
+- `dataset`: integración, limpieza, agregación y reporte de calidad.
+- `features`: preparación de las variables y reporte de calidad correspondiente.
 
-- **Limpieza:** se exigen identificadores enteros positivos y fechas válidas, con fin
-  posterior al inicio. Se cuenta cada descarte una sola vez. Se conservan los viajes
-  cuyo inicio y fin caen en 2023.
-- **Duplicados:** se comparan identificador, estaciones y fechas en todos los archivos
-  juntos. Si el mismo identificador corresponde a movimientos distintos, se detiene el
-  proceso para revisar la fuente. Los datos demográficos faltantes no eliminan viajes.
-- **Atípicos:** se reportan duraciones fuera de Q1 − 1.5 × IQR y Q3 + 1.5 × IQR, viajes
-  de menos de 60 segundos con la misma estación y viajes de más de 24 horas.
-  Los límites IQR se calculan solo para el diagnóstico, no se utilizan para entrenar
-  ni filtrar el conjunto de prueba.
-- **Agregación:** se cuentan entradas al finalizar el viaje y salidas al iniciarlo.
-  El balance es entradas menos salidas. Se comprueba que ambos totales coincidan con
-  los viajes limpios. La frecuencia de una hora es la opción de este experimento;
-  no representa un horizonte definitivo del producto ni disponibilidad de bicicletas.
-- **Ceros:** en entradas y salidas indican ausencia de movimientos registrados de ese tipo.
-  En el balance, indican igualdad entre entradas y salidas, aunque haya habido movimientos.
-  No conocemos periodos de cierre, alta o baja de las estaciones.
-- **Preparación:** calendario, codificación cíclica de hora y día de semana, retardos de
-  1, 2, 24 y 168 horas y medias de las 3 y 6 horas anteriores por estación. Se comprueba
-  continuidad horaria y se eliminan las primeras 168 horas de cada serie por falta de
-  historial. Ninguna media incluye la hora que se intenta predecir. La bandera de hora
-  pico conserva la hipótesis del flujo original (7–9 y 18–20), esto requiere contrastarse en EDA.
-- **Escalado y PCA:** se conservan las unidades de conteo y la interpretación de las
-  variables. La estación se conserva como identificador numérico en ese modelo, lo que
-  constituye una decisión provisional.
+Los reportes locales se guardan en `reports/quality/` e incluyen el identificador de la ejecución en su nombre.
 
-Las variables históricas presuponen que las horas anteriores ya se observaron. Este
-flujo no implementa por sí solo predicciones de varios pasos sin observaciones futuras.
+El servidor utiliza el puerto 5001 por defecto. Para utilizar otro servidor de seguimiento, configura `MLFLOW_TRACKING_URI` o proporciona `--tracking-uri` a cada etapa, según corresponda.
 
-### Versiones y evidencia
+## Reglas de calidad y transformaciones
 
-Los archivos de `manifests/` describen versiones anteriores compartidas en Drive.
-No deben reutilizarse sus hashes para salidas regeneradas con reglas diferentes.
-Después de ejecutar este flujo con los datos reales, registrar la nueva versión con
-su SHA-256, entradas, transformaciones, ubicación y commit del código correspondiente.
-Mientras haya cambios sin confirmar, MLflow registra esa condición y adjunta los fuentes
-exactos usados. Los reportes de calidad no sustituyen al manifiesto compartido.
+### Limpieza de viajes
 
-Las pruebas generan datos sintéticos temporales y una base MLflow aislada. Sirven para
-comprobar el código.
+- Los identificadores deben ser enteros positivos y las fechas deben ser válidas.
+- La fecha y hora de finalización deben ser posteriores a las de inicio.
+- Cada registro descartado se contabiliza una sola vez.
+- Se conservan los viajes cuyo inicio y fin ocurren dentro de 2023.
+- Los datos demográficos faltantes no provocan que se descarte un viaje.
 
-### Ejecución verificada del 25 de octubre de 2026
+### Duplicados y conflictos
 
-Se extrajeron los 12 CSV de 2023 del archivo original `mibici_raw_v1.tar.xz` y se ejecutaron
-las dos etapas contra MLflow local en el puerto 5001.
+- La revisión de duplicados se realiza considerando conjuntamente todos los archivos mensuales.
+- Se comparan el identificador del viaje, las estaciones y las fechas.
+- Si un mismo identificador representa movimientos distintos, el proceso se detiene para que se revise la fuente, en lugar de elegir arbitrariamente un registro.
 
-| Resultado | Cantidad |
-| --- | ---: |
+### Detección de valores atípicos
+
+Se reportan, entre otros, los siguientes casos:
+
+- Duraciones fuera de los límites de `Q1 − 1.5 × IQR` y `Q3 + 1.5 × IQR`.
+- Viajes de menos de 60 segundos que inician y terminan en la misma estación.
+- Viajes con duración superior a 24 horas.
+
+Los límites IQR se utilizan para diagnóstico; no constituyen por sí mismos una regla para eliminar observaciones del conjunto. En la ejecución verificada, las duraciones atípicas se conservaron.
+
+### Balance horario por estación
+
+- Una **salida** se cuenta en la hora de inicio del viaje.
+- Una **entrada** se cuenta en la hora de finalización.
+- El balance se calcula como `entradas - salidas`.
+- Se verifica que los totales de entradas y salidas coincidan con el número de viajes limpios.
+
+La frecuencia horaria corresponde a este experimento y no define necesariamente el horizonte final del producto ni representa directamente la disponibilidad de bicicletas en una estación.
+
+### Ceros y estaciones sin movimientos
+
+Un cero en entradas o salidas significa que no se registraron movimientos de ese tipo en el periodo. Un balance igual a cero significa que las entradas y salidas fueron iguales, no que no hubo actividad. Con los datos disponibles tampoco se identifican necesariamente los periodos en que una estación estuvo cerrada, fue dada de alta o dejó de operar.
+
+### Ingeniería de características
+
+La preparación incluye:
+
+- Variables de calendario.
+- Codificación cíclica de hora y día de la semana.
+- Retardos de 1, 2, 24 y 168 horas.
+- Promedios de las 3 y 6 horas anteriores por estación.
+- Validación de continuidad horaria.
+
+Se eliminan las primeras 168 horas de cada serie porque no cuentan con historial suficiente. Los promedios utilizan únicamente horas anteriores a la hora que se busca caracterizar, para evitar fuga de información temporal.
+
+La bandera de hora pico conserva la hipótesis del flujo original (7–9 y 18–20); debe contrastarse con el análisis exploratorio de datos antes de asumir que representa los patrones definitivos de demanda.
+
+## Ejecución verificada
+
+La ejecución documentada se realizó el **25 de octubre de 2026**, utilizando los 12 CSV de 2023 extraídos del archivo original `mibici_raw_v1.tar.xz` y MLflow local en el puerto 5001.
+
+| Indicador | Resultado |
+|---|---:|
 | Viajes antes de limpiar | 4,293,115 |
 | Descartados por duración no positiva | 17,993 |
-| Descartados porque cruzan el año | 5 |
+| Descartados por cruzar el año | 5 |
 | Viajes conservados | 4,275,117 |
-| Estaciones | 359 |
+| Estaciones identificadas | 359 |
 | Filas del balance horario | 3,144,840 |
-| Filas preparadas / columnas totales | 3,084,528 / 33 |
-| Filas sin historial de 168 horas | 60,312 |
-| Nulos en las características finales | 0 |
+| Filas preparadas | 3,084,528 |
+| Características totales | 33 |
+| Filas excluidas por falta de historial de 168 horas | 60,312 |
+| Valores nulos en las características finales | 0 |
 
-Los reportes de `reports/quality/` contienen las huellas completas y los motivos de
-descarte. Las ejecuciones finalizadas son:
+Las ejecuciones finalizadas de MLflow registradas para esa corrida fueron:
 
-- Limpieza y agregación: `80f4168ba16e4edd8ffb474279fceb20`.
-- Preparación: `4a7b9060d1c3435aa21d4d4a85a74de1`.
+| Etapa | `run_id` |
+|---|---|
+| Limpieza y agregación (`dataset`) | `80f4168ba16e4edd8ffb474279fceb20` |
+| Preparación (`features`) | `4a7b9060d1c3435aa21d4d4a85a74de1` |
 
-Se detectaron 306 combinaciones de estación y mes sin movimientos registrados. Además,
-89,758 duraciones fueron atípicas según IQR y se conservaron según la regla documentada.
+También se identificaron **306 combinaciones de estación y mes sin movimientos registrados** y **89,758 duraciones atípicas según IQR**, que se conservaron conforme a las reglas descritas. Los reportes de `reports/quality/` contienen el detalle y las huellas correspondientes.
 
-## Project Organization
+Estos valores son evidencia de una ejecución concreta; pueden cambiar al regenerar el pipeline con otras entradas, reglas o versiones del código.
 
-```
-├── LICENSE            <- Open-source license if one is chosen
-├── Makefile           <- Makefile with convenience commands like `make data` or `make train`
-├── README.md          <- The top-level README for developers using this project.
-├── data
-│   ├── external       <- Data from third party sources.
-│   ├── interim        <- Intermediate data that has been transformed.
-│   ├── processed      <- The final, canonical data sets for modeling.
-│   └── raw            <- The original, immutable data dump.
-│
-├── docs               <- A default mkdocs project; see www.mkdocs.org for details
-│
-├── models             <- Trained and serialized models, model predictions, or model summaries
-│
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
-├── pyproject.toml     <- Project configuration file with package metadata for 
-│                         mibici and configuration for tools like black
-│
-├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-│
-├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures        <- Generated graphics and figures to be used in reporting
-│
-├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-│                         generated with `pip freeze > requirements.txt`
-│
-├── setup.cfg          <- Configuration file for flake8
-│
-└── mibici   <- Source code for use in this project.
-    │
-    ├── __init__.py             <- Makes mibici a Python module
-    │
-    ├── config.py               <- Store useful variables and configuration
-    │
-    ├── dataset.py              <- Scripts to download or generate data
-    │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+## Pruebas
+
+Ejecuta desde la raíz del repositorio:
+
+```bash
+python -m pytest tests -q
 ```
 
---------
+Las pruebas generan datos sintéticos temporales y utilizan una base de MLflow aislada. Por ello, permiten comprobar el comportamiento del código sin necesitar los archivos reales de MiBici ni modificar la base de seguimiento utilizada para los experimentos locales.
 
+## Trazabilidad y reproducibilidad
+
+El pipeline registra en MLflow las reglas aplicadas, conteos, metadatos de los conjuntos de datos, fuentes del código, entorno de ejecución y reportes de calidad. Las rutas, las huellas SHA-256 y el `run_id` ayudan a relacionar las salidas de ambas etapas.
+
+La huella que muestra MLflow no debe confundirse con el SHA-256 del archivo: son identificadores distintos y se conservan ambos.
+
+Consideraciones para reproducir o publicar una nueva versión:
+
+1. Usa los archivos originales correspondientes y conserva sus nombres y procedencia.
+2. No reutilices hashes de manifiestos anteriores para salidas regeneradas con reglas distintas. Los archivos de `manifests/` describen versiones compartidas anteriormente.
+3. Después de ejecutar el flujo con los datos reales, registra la nueva versión, su SHA-256, entradas, transformaciones, ubicación y commit del código correspondiente.
+4. Revisa los cambios del repositorio antes de ejecutar: cuando hay cambios sin confirmar, MLflow registra esa condición y adjunta los archivos fuente utilizados.
+5. Conserva los reportes de calidad como evidencia complementaria; no sustituyen al manifiesto de datos compartido.
+
+Los datos, la base SQLite de MLflow y los artefactos locales se mantienen fuera de Git, de acuerdo con las reglas de `.gitignore`.
+
+## Limitaciones conocidas
+
+- La ejecución necesita los 12 archivos mensuales completos de 2023.
+- Las variables históricas presuponen que las horas previas ya fueron observadas. Por sí solas no implementan predicciones recursivas de varios pasos sin observaciones futuras.
+- La frecuencia horaria es una decisión de este experimento y debe validarse contra el objetivo final de predicción.
+- La definición de hora pico es una hipótesis heredada y requiere validación con EDA.
+- La estación se conserva como identificador numérico en esta preparación; debe revisarse si esa representación es adecuada para el modelo que se elija.
+- Los ceros observados no permiten distinguir por sí solos entre ausencia de demanda y periodos sin operación de una estación.
+
+---
+
+**Equipo 6 · Operaciones de aprendizaje automático · Grupo 10**
