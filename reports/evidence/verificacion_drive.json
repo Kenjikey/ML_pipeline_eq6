@@ -1,0 +1,16 @@
+[
+  {
+    "archivo": "hourly_balance_2023_v2.parquet",
+    "url": "https://drive.google.com/file/d/13oK7ommWJwCdzaPPFy8YrVFbG1sGYfmM/view?usp=share_link",
+    "sha256": "bbd1172e880c4f7ddc9d4060e83ebb145a656c16b0dd90c71b69e4df0c2435a8",
+    "bytes": 9085294,
+    "verificacion": "descarga_publica_sin_autenticacion"
+  },
+  {
+    "archivo": "features_2023_v2.parquet",
+    "url": "https://drive.google.com/file/d/1KuzRtgwRyvVFrm8Qa_kgLj1rSJT6ZWG3/view?usp=sharing",
+    "sha256": "3630380d18c0810b708f8b407a722bb32640770ef2378a1e21523015e12ccc5a",
+    "bytes": 39796382,
+    "verificacion": "descarga_publica_sin_autenticacion"
+  }
+]

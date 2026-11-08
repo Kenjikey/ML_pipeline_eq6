@@ -1,0 +1,157 @@
+{
+  "anio": 2023,
+  "metricas": {
+    "filas_entrada": 4293115,
+    "descartados_identificadores_invalidos": 0,
+    "descartados_fechas_invalidas": 0,
+    "descartados_duracion_no_positiva": 17945,
+    "descartados_fuera_del_anio": 5,
+    "descartados_duplicados": 0,
+    "filas_limpias": 4275165,
+    "descartados_total": 17950,
+    "duracion_atipica_iqr": 89523,
+    "viajes_menores_60s_misma_estacion": 156621,
+    "viajes_mayores_24h": 12,
+    "archivos_entrada": 12,
+    "filas_salida": 3144840,
+    "columnas_salida": 5,
+    "estaciones": 359,
+    "estacion_meses_sin_movimientos": 572,
+    "entradas_total": 4275165,
+    "salidas_total": 4275165,
+    "horas_sin_movimientos": 1526581
+  },
+  "nulos_entrada": {
+    "Viaje_Id": 0,
+    "Usuario_Id": 0,
+    "Genero": 19621,
+    "Año_de_nacimiento": 6877,
+    "Inicio_del_viaje": 0,
+    "Fin_del_viaje": 0,
+    "Origen_Id": 0,
+    "Destino_Id": 0
+  },
+  "reglas": [
+    "Excluir viajes sin identificadores enteros positivos o sin fechas interpretables.",
+    "Interpretar fechas ISO como año-mes-día y fechas con barras como día/mes/año.",
+    "Excluir viajes con fin anterior o igual al inicio.",
+    "Conservar viajes cuyo inicio y fin pertenecen al año seleccionado.",
+    "Eliminar duplicados coincidentes en las cinco columnas necesarias para contar viajes.",
+    "Detener el proceso si un Viaje_Id válido describe movimientos distintos.",
+    "No eliminar por datos demográficos faltantes: no se usan para contar movimientos.",
+    "Reportar duraciones atípicas sin eliminarlas automáticamente.",
+    "Balance = entradas - salidas; completar con cero las horas sin movimientos registrados."
+  ],
+  "duracion_segundos": {
+    "q1": 341.0,
+    "q3": 881.0,
+    "iqr": 540.0,
+    "min": 1.0,
+    "max": 159849.0
+  },
+  "entradas": [
+    {
+      "archivo": "datos_abiertos_2023_01.csv",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/raw/datos_abiertos_2023_01.csv",
+      "sha256": "1295f828306d9420457e5cef560b9c9809427ee0ae19edf71608c77d9a1bd210",
+      "filas": 366018,
+      "encoding": "latin1",
+      "mes_inicio_verificado": 1
+    },
+    {
+      "archivo": "datos_abiertos_2023_02.csv",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/raw/datos_abiertos_2023_02.csv",
+      "sha256": "8b03e54c6e3fe348d9817b2ebcd2a5b4262bf2e8b700cc80d249be3c8faff8c3",
+      "filas": 355291,
+      "encoding": "latin1",
+      "mes_inicio_verificado": 2
+    },
+    {
+      "archivo": "datos_abiertos_2023_03.csv",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/raw/datos_abiertos_2023_03.csv",
+      "sha256": "da6110935ddebe1a7bac42a877555c072a2741580360dfc5bf7695a6c9cc6c57",
+      "filas": 402460,
+      "encoding": "latin1",
+      "mes_inicio_verificado": 3
+    },
+    {
+      "archivo": "datos_abiertos_2023_04.csv",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/raw/datos_abiertos_2023_04.csv",
+      "sha256": "071ab62c647712ecb07cbfcee6eba5788dfd8bf009fb6b3264a2a0815440f140",
+      "filas": 333211,
+      "encoding": "utf-8",
+      "mes_inicio_verificado": 4
+    },
+    {
+      "archivo": "datos_abiertos_2023_05.csv",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/raw/datos_abiertos_2023_05.csv",
+      "sha256": "ae5d16f015f5396ca11a86a9cc9b287f06ecf25ec1771eaa40197d03bbaa2c11",
+      "filas": 364184,
+      "encoding": "utf-8",
+      "mes_inicio_verificado": 5
+    },
+    {
+      "archivo": "datos_abiertos_2023_06.csv",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/raw/datos_abiertos_2023_06.csv",
+      "sha256": "d0147afd4bb2b4fb20d43d52fd3df019fce77d0dcffa4755b12a9ab7fc375aa4",
+      "filas": 339628,
+      "encoding": "latin1",
+      "mes_inicio_verificado": 6
+    },
+    {
+      "archivo": "datos_abiertos_2023_07.csv",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/raw/datos_abiertos_2023_07.csv",
+      "sha256": "c9ceca9a8814d968ad0eb278b5ae77f265d18d867ec780c77e9b41ebec7c56b1",
+      "filas": 331787,
+      "encoding": "latin1",
+      "mes_inicio_verificado": 7
+    },
+    {
+      "archivo": "datos_abiertos_2023_08.csv",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/raw/datos_abiertos_2023_08.csv",
+      "sha256": "1ec42a5b46725474c5ff92e78a5b857468fbdeb06048af6a8e0c52e652f6784f",
+      "filas": 354810,
+      "encoding": "latin1",
+      "mes_inicio_verificado": 8
+    },
+    {
+      "archivo": "datos_abiertos_2023_09.csv",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/raw/datos_abiertos_2023_09.csv",
+      "sha256": "17e475dfff0d6df966c62a23ffef810d8d4e80144331007c73f4df947a6c83a6",
+      "filas": 363859,
+      "encoding": "latin1",
+      "mes_inicio_verificado": 9
+    },
+    {
+      "archivo": "datos_abiertos_2023_10.csv",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/raw/datos_abiertos_2023_10.csv",
+      "sha256": "540d673e4c6cb56ab4737ffc1c23169a96a3a4d984be2a2fecfdef29cf5a0838",
+      "filas": 383239,
+      "encoding": "latin1",
+      "mes_inicio_verificado": 10
+    },
+    {
+      "archivo": "datos_abiertos_2023_11.csv",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/raw/datos_abiertos_2023_11.csv",
+      "sha256": "165a429e703727b3b84bd99ad25926db24f513bc4c7db30061b7b06067fba30f",
+      "filas": 384464,
+      "encoding": "latin1",
+      "mes_inicio_verificado": 11
+    },
+    {
+      "archivo": "datos_abiertos_2023_12.csv",
+      "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/raw/datos_abiertos_2023_12.csv",
+      "sha256": "df5c65895f673a6de01c20b6d2d8d57790669cb7986de1c599ebc1719a29372d",
+      "filas": 314164,
+      "encoding": "latin1",
+      "mes_inicio_verificado": 12
+    }
+  ],
+  "salida": {
+    "archivo": "hourly_balance_2023.parquet",
+    "ruta_local": "/Users/villegas/Documents/Codex/Maestria/MLOps/Proyecto/ML_pipeline_eq6/data/interim/hourly_balance_2023.parquet",
+    "sha256": "bbd1172e880c4f7ddc9d4060e83ebb145a656c16b0dd90c71b69e4df0c2435a8"
+  },
+  "supuesto_ceros": "Cero significa ausencia de movimientos registrados. No se conocen fechas de alta, baja o fallos de cada estación; no demuestra demanda cero ni disponibilidad de bicis.",
+  "run_id": "90f8c0a4e5b1499aaabe18093046ef96"
+}

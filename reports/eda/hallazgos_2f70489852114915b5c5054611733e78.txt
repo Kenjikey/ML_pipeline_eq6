@@ -1,0 +1,13 @@
+Se analizaron 4,275,165 viajes conservados, 359 estaciones y 365 días. Los totales de entradas y salidas son iguales por construcción del conjunto, que exige que ambos extremos del viaje estén dentro de 2023.
+
+El 48.54% de las combinaciones estación-hora no registra movimientos. Otro 8.85% tiene balance cero con entradas y salidas positivas. Un balance cero no implica ausencia de viajes.
+
+Las tres horas con más salidas medias en lunes–viernes son 18:00, 8:00, 17:00. El promedio diario de salidas es 13,136 de lunes a viernes y 8,189 en fin de semana (37.7% menos). Se comparan promedios por día para evitar el efecto de tener distinto número de lunes, martes, etc.
+
+El mes 3 tiene el mayor promedio diario de salidas (12,963); el mes 12, el menor (10,104). Son patrones descriptivos; no prueban causas como clima, cierres o cambios en la oferta.
+
+La estación 51 presenta la mayor suma de desbalances horarios absolutos (76,910). Este indicador también depende del volumen de uso y no demuestra urgencia de rebalanceo: no tenemos inventario ni capacidad. Hay 572 combinaciones estación-mes sin movimientos; no se conocen sus fechas reales de apertura, cierre o fallos.
+
+Las correlaciones se calcularon solo con enero–septiembre e incluyen las medias móviles reales *_roll_mean_6h. No prueban causalidad ni desempeño predictivo. La relación del balance con entradas y salidas es, en parte, consecuencia de su definición.
+
+Se mantienen los conteos en sus unidades y la codificación cíclica de hora y día de semana. No se aplican escalado ni PCA: el modelo de árboles existente no requiere escalado y se prioriza interpretar las variables. La estación numérica y la bandera de hora pico son decisiones provisionales. Las variables históricas requieren que las horas anteriores ya se hayan observado; este EDA no acredita predicciones de varios pasos ni capacidad para anticipar bicicletas disponibles. No se reentrenaron modelos.

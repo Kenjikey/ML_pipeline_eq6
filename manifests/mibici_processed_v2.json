@@ -1,0 +1,43 @@
+[
+  {
+    "id": "hourly_balance_2023_v2",
+    "archivo": "hourly_balance_2023_v2.parquet",
+    "sha256": "bbd1172e880c4f7ddc9d4060e83ebb145a656c16b0dd90c71b69e4df0c2435a8",
+    "url": "https://drive.google.com/file/d/13oK7ommWJwCdzaPPFy8YrVFbG1sGYfmM/view?usp=share_link",
+    "origen": [
+      "raw_v1"
+    ],
+    "transformaciones": [
+      "Seleccionar los 12 CSV de 2023 del archivo original, sin modificar los CSV.",
+      "Leer UTF-8 con alternativa Latin-1 y eliminar espacios exteriores en encabezados.",
+      "Interpretar las fechas ISO como año-mes-día y las fechas con barras como día/mes/año; verificar el mes de inicio de cada CSV.",
+      "Excluir identificadores no enteros positivos, fechas inválidas, duración no positiva y viajes cuyo inicio o fin esté fuera de 2023. En esta ejecución: 17,945 descartes por duración no positiva y 5 por cruce de año; conservar 4,275,165 viajes.",
+      "Eliminar duplicados coincidentes en Viaje_Id, estaciones e inicio y fin; detenerse si un Viaje_Id describe movimientos distintos. No se encontraron duplicados.",
+      "Conservar los datos demográficos faltantes y las duraciones atípicas diagnosticadas; no son criterios automáticos de descarte.",
+      "Contar salidas al inicio y entradas al fin de cada viaje, en intervalos de una hora; balance = entradas - salidas.",
+      "Completar la malla de 359 estaciones por 8,760 horas con ceros de movimientos no registrados: 3,144,840 filas y 5 columnas. No se dispone de calendario de altas, bajas o cierres de estaciones.",
+      "Copiar la salida sin cambiar sus bytes al nombre versionado hourly_balance_2023_v2.parquet."
+    ],
+    "commit": "758c4e384c28dbc046e2548c5ee9b4b366e70937"
+  },
+  {
+    "id": "features_2023_v2",
+    "archivo": "features_2023_v2.parquet",
+    "sha256": "3630380d18c0810b708f8b407a722bb32640770ef2378a1e21523015e12ccc5a",
+    "url": "https://drive.google.com/file/d/1KuzRtgwRyvVFrm8Qa_kgLj1rSJT6ZWG3/view?usp=sharing",
+    "origen": [
+      "hourly_balance_2023_v2"
+    ],
+    "transformaciones": [
+      "Validar claves estación-hora únicas, continuidad horaria, ausencia de nulos y balance = entradas - salidas.",
+      "Agregar mes, día del mes, día de semana, hora, fin de semana y bandera de hora pico (7, 8, 9, 18, 19 y 20); esta última es una hipótesis provisional del flujo inicial.",
+      "Codificar hora con seno/coseno de periodo 24 y día de semana con seno/coseno de periodo 7.",
+      "Agregar retardos de 1, 2, 24 y 168 horas para entradas, salidas y balance, separados por estación.",
+      "Agregar medias móviles de 3 y 6 horas para entradas, salidas y balance, desplazadas una hora y separadas por estación.",
+      "Eliminar las primeras 168 horas de cada estación por historial insuficiente: 60,312 filas; conservar 3,084,528 filas y 33 columnas totales, sin nulos.",
+      "Conservar las unidades de conteo; no aplicar escalado ni PCA. No se incluyen identificadores de personas ni variables demográficas.",
+      "Copiar la salida sin cambiar sus bytes al nombre versionado features_2023_v2.parquet."
+    ],
+    "commit": "758c4e384c28dbc046e2548c5ee9b4b366e70937"
+  }
+]
