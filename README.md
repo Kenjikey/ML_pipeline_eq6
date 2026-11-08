@@ -95,6 +95,7 @@ Se requiere Python y Git. La versión de Python y las dependencias del proyecto 
 ## Preparar los datos
 
 Coloca en `data/raw/` los **12 archivos CSV originales de 2023**, con estos nombres:
+Los archivos se encuentran temporalmente en la siguiente liga: https://drive.google.com/open?id=1sk2UJWuqsHCMgpNiRqWmweCJZiwPpq98&usp=drive_fs
 
 ```text
 datos_abiertos_2023_01.csv
