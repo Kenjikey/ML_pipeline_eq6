@@ -1,12 +1,13 @@
-
 import json
 import unittest
+
 import mlflow
+from mlflow.tracking import MlflowClient
 import numpy as np
 import pandas as pd
 import pytest
-from mlflow.tracking import MlflowClient
 from typer.testing import CliRunner
+
 from mibici.config import MLFLOW_EXPERIMENT_NAME
 from mibici.dataset import app as dataset_app
 from mibici.dataset import (
