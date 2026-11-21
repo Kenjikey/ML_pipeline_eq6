@@ -1,0 +1,61 @@
+{
+  "timestamp_utc": "2026-11-21T00:31:13.385007+00:00",
+  "sample_sizes": {
+    "reference": 25000,
+    "current": 25000
+  },
+  "reference_metrics": {
+    "balance_mae": 1.3669,
+    "balance_rmse": 2.1015,
+    "balance_r2": 0.3214
+  },
+  "current_metrics": {
+    "balance_mae": 2.7404,
+    "balance_rmse": 3.8435,
+    "balance_r2": -0.1511
+  },
+  "feature_drift": {
+    "entradas_lag_1h": {
+      "psi": 0.0612,
+      "ks_stat": 0.118,
+      "ks_pvalue": 0.0,
+      "drift_detected": false
+    },
+    "salidas_lag_1h": {
+      "psi": 0.0243,
+      "ks_stat": 0.0837,
+      "ks_pvalue": 0.0,
+      "drift_detected": false
+    },
+    "balance_lag_1h": {
+      "psi": 0.0271,
+      "ks_stat": 0.0858,
+      "ks_pvalue": 0.0,
+      "drift_detected": false
+    },
+    "entradas_roll_mean_3h": {
+      "psi": 3.3339,
+      "ks_stat": 0.3734,
+      "ks_pvalue": 0.0,
+      "drift_detected": true
+    },
+    "salidas_roll_mean_3h": {
+      "psi": 3.5862,
+      "ks_stat": 0.3189,
+      "ks_pvalue": 0.0,
+      "drift_detected": true
+    },
+    "balance_roll_mean_6h": {
+      "psi": 0.0,
+      "ks_stat": 0.0,
+      "ks_pvalue": 1.0,
+      "drift_detected": false
+    }
+  },
+  "status": "ALERT",
+  "alerts": [
+    "DATA_DRIFT: 'entradas_roll_mean_3h' excede umbral PSI (3.3339 >= 0.2)",
+    "DATA_DRIFT: 'salidas_roll_mean_3h' excede umbral PSI (3.5862 >= 0.2)",
+    "MODEL_DEGRADATION: balance_mae subio de 1.3669 a 2.7404 (+100.5%)"
+  ]
+}

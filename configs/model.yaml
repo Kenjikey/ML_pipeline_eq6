@@ -1,0 +1,31 @@
+random_state: 42
+feature_version: "v2"
+n_features: 29
+targets:
+  - "entradas"
+  - "salidas"
+
+temporal_split:
+  train_end_month: 9        # Enero - Septiembre
+  validation_month: 10      # Octubre
+  test_start_month: 11      # Noviembre - Diciembre
+
+baseline:
+  type: "historical_median"
+  group_cols:
+    - "estacion_id"
+    - "dia_semana"
+    - "hora"
+
+candidate_estimators:
+  - model_family: "MultiOutput_HistGradientBoostingRegressor"
+    max_iter: 150
+    max_depth: 10
+    learning_rate: 0.08
+    random_state: 42
+  - model_family: "MultiOutput_HistGradientBoostingRegressor"
+    max_iter: 150
+    max_depth: 8
+    learning_rate: 0.05
+    random_state: 42
+    

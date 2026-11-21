@@ -3,7 +3,7 @@
 #################################################################################
 
 PROJECT_NAME = ML_pipeline_eq6
-PYTHON_VERSION = 3.14
+PYTHON_VERSION = 3.12
 PYTHON_INTERPRETER = python
 
 #################################################################################
@@ -12,14 +12,13 @@ PYTHON_INTERPRETER = python
 
 
 ## Install Python dependencies
-.PHONY: requirements
+.PHONY: setup requirements
+setup: requirements
+
 requirements:
 	$(PYTHON_INTERPRETER) -m pip install -U pip
 	$(PYTHON_INTERPRETER) -m pip install -r requirements.txt
 	
-
-
-
 ## Delete all compiled Python files
 .PHONY: clean
 clean:
@@ -30,51 +29,62 @@ clean:
 ## Lint using flake8, black, and isort (use `make format` to do formatting)
 .PHONY: lint
 lint:
-	flake8 mibici
-	isort --check --diff mibici
-	black --check mibici
+	flake8 --max-line-length=99 mibici tests
+	isort --check --diff mibici tests
+	black --check mibici tests
 
 ## Format source code with black
 .PHONY: format
 format:
-	isort mibici
-	black mibici
-
-
+	isort mibici tests
+	black mibici tests
 
 ## Run tests
 .PHONY: test
 test:
-	python -m pytest tests
+	$(PYTHON_INTERPRETER) -m pytest -q
 
+## Launch MLflow tracking UI
+.PHONY: mlflow_ui
+mlflow_ui:
+	mlflow ui --host 127.0.0.1 --port 5001
 
+## Run FastAPI serving locally
+.PHONY: api serve
+api: serve
+serve:
+	uvicorn mibici.serving.app:app --host 0.0.0.0 --port 8000 --reload
 
+## Build Docker container for serving
+.PHONY: docker-build
+docker-build:
+	docker build -t mibici-ml-service:0.1.0 .
 
 #################################################################################
 # PROJECT RULES                                                                 #
 #################################################################################
 
-
 ## Make dataset
 .PHONY: data
-data: requirements
+data:
 	$(PYTHON_INTERPRETER) mibici/dataset.py
 
+## Generate features from hourly balance
+.PHONY: features
+features:
+	$(PYTHON_INTERPRETER) mibici/features.py
 
-#################################################################################
-# Self Documenting Commands                                                     #
-#################################################################################
+## Train consolidated pipeline and register in MLflow Model Registry
+.PHONY: train
+train:
+	$(PYTHON_INTERPRETER) mibici/modeling/train.py
 
-.DEFAULT_GOAL := help
+## Run batch inference on test split
+.PHONY: predict
+predict:
+	$(PYTHON_INTERPRETER) mibici/modeling/predict.py
 
-define PRINT_HELP_PYSCRIPT
-import re, sys; \
-lines = '\n'.join([line for line in sys.stdin]); \
-matches = re.findall(r'\n## (.*)\n[\s\S]+?\n([a-zA-Z_-]+):', lines); \
-print('Available rules:\n'); \
-print('\n'.join(['{:25}{}'.format(*reversed(match)) for match in matches]))
-endef
-export PRINT_HELP_PYSCRIPT
-
-help:
-	@$(PYTHON_INTERPRETER) -c "${PRINT_HELP_PYSCRIPT}" < $(MAKEFILE_LIST)
+## Run drift and performance degradation monitor
+.PHONY: monitor
+monitor:
+	$(PYTHON_INTERPRETER) mibici/monitoring/drift.py

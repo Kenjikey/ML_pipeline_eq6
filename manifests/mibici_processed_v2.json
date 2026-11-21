@@ -23,7 +23,7 @@
   {
     "id": "features_2023_v2",
     "archivo": "features_2023_v2.parquet",
-    "sha256": "3630380d18c0810b708f8b407a722bb32640770ef2378a1e21523015e12ccc5a",
+    "sha256": "5c46a926b0cb04ec481c3ce814ee2570644577322785c6bacf234aff1ff02155",
     "url": "https://drive.google.com/file/d/1KuzRtgwRyvVFrm8Qa_kgLj1rSJT6ZWG3/view?usp=sharing",
     "origen": [
       "hourly_balance_2023_v2"

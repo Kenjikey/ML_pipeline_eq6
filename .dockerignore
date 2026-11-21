@@ -1,0 +1,34 @@
+# Control de versiones y CI
+.git
+.gitignore
+.github/
+
+# Entornos virtuales y cache de Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Datos crudos/procesados, experimentos y reportes (no requeridos en runtime)
+data/
+mlruns/
+mlflow.db
+*.sqlite
+*.db
+notebooks/
+reports/
+docs/
+references/
+*.zip
+*.log
+
+# Pruebas y configuracion de IDE
+tests/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,11 @@
+target_year: 2023
+dataset_version: "v2"
+expected_months: 12
+
+raw_dir: "data/raw"
+interim_path: "data/interim/hourly_balance_2023.parquet"
+processed_path: "data/processed/features_2023_v2.parquet"
+
+raw_manifest: "manifests/mibici_original.json"
+processed_manifest: "manifests/mibici_processed_v2.json"
+processed_manifest_id: "features_2023_v2"

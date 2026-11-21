@@ -1,0 +1,24 @@
+reference_dataset: "data/processed/features_2023_v2.parquet"
+reference_split_month: 10   # Holdout de referencia (Octubre o Test Nov-Dic)
+reports_dir: "reports/monitoring"
+
+monitoring_seed: 42
+synthetic_uplift: 0.28      # +28% incremento sintetico en demanda/lags
+min_rows: 100
+
+thresholds:
+  psi_threshold: 0.20
+  drifted_features_pct_threshold: 20.0
+  mae_degradation_pct: 20.0
+
+monitored_columns:
+  - "entradas_lag_1h"
+  - "entradas_lag_24h"
+  - "entradas_lag_168h"
+  - "salidas_lag_1h"
+  - "salidas_lag_24h"
+  - "salidas_lag_168h"
+  - "balance_lag_1h"
+  - "balance_lag_24h"
+  - "entradas_roll_mean_3h"
+  - "salidas_roll_mean_3h"

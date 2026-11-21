@@ -1,95 +1,86 @@
 """
-Scikit-Learn Pipeline integration: Standardized ColumnTransformers, custom feature transformers,
-and reproducible model training wrappers for MiBici MLOps.
+Pipeline consolidado de preprocesamiento y modelado multi-salida para MiBici.
+Alineado con las 29 variables explicativas generadas en mibici/features.py (v2).
 """
 
-from typing import List, Dict, Any, Optional
-import numpy as np
-import pandas as pd
-from sklearn.base import BaseEstimator, TransformerMixin
+from typing import Any, Dict, List, Optional
+
 from sklearn.compose import ColumnTransformer
+from sklearn.ensemble import HistGradientBoostingRegressor
+from sklearn.multioutput import MultiOutputRegressor
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import RobustScaler
+from sklearn.preprocessing import OrdinalEncoder, RobustScaler
 
-class CyclicalFeatureEncoder(BaseEstimator, TransformerMixin):
-    """
-    Custom Scikit-Learn transformer to encode cyclical date/time attributes (hora, dia_semana).
-    """
-    def __init__(self, hour_col: Optional[str] = "hora", dayofweek_col: Optional[str] = "dia_semana"):
-        self.hour_col = hour_col
-        self.dayofweek_col = dayofweek_col
+TARGET_COLS = ["entradas", "salidas"]
+EXCLUDE_COLS = ["timestamp", "entradas", "salidas", "balance"]
 
-    def fit(self, X: pd.DataFrame, y: Optional[pd.Series] = None):
-        return self
+STATION_COL = ["estacion_id"]
+CALENDAR_COLS = ["mes", "dia_mes", "dia_semana", "hora", "es_fin_de_semana", "es_hora_pico"]
+CYCLICAL_COLS = ["hora_sin", "hora_cos", "dia_semana_sin", "dia_semana_cos"]
+LAG_COLS = [
+    f"{target}_lag_{lag}h"
+    for target in ["entradas", "salidas", "balance"]
+    for lag in [1, 2, 24, 168]
+]
+ROLLING_COLS = [
+    f"{target}_roll_mean_{win}h" for target in ["entradas", "salidas", "balance"] for win in [3, 6]
+]
 
-    def transform(self, X: pd.DataFrame) -> pd.DataFrame:
-        X = X.copy()
-        if "timestamp" in X.columns and not pd.api.types.is_datetime64_any_dtype(X["timestamp"]):
-            X["timestamp"] = pd.to_datetime(X["timestamp"])
+NUMERIC_HISTORY_COLS = LAG_COLS + ROLLING_COLS
+ALL_FEATURE_COLS = STATION_COL + CALENDAR_COLS + CYCLICAL_COLS + NUMERIC_HISTORY_COLS
 
-        if "timestamp" in X.columns:
-            hora = X["timestamp"].dt.hour
-            dia_semana = X["timestamp"].dt.dayofweek
-        else:
-            hora = X.get(self.hour_col, 0)
-            dia_semana = X.get(self.dayofweek_col, 0)
 
-        X["hora_sin"] = np.sin(2 * np.pi * hora / 24.0)
-        X["hora_cos"] = np.cos(2 * np.pi * hora / 24.0)
-        X["dia_semana_sin"] = np.sin(2 * np.pi * dia_semana / 7.0)
-        X["dia_semana_cos"] = np.cos(2 * np.pi * dia_semana / 7.0)
-        return X
-
-def get_feature_names(df_columns: Optional[List[str]] = None) -> Dict[str, List[str]]:
-    """Returns categorized feature names used across models."""
-    if df_columns is not None:
-        numeric_cols = [c for c in df_columns if "lag" in c or "roll" in c or "media" in c or "std" in c]
-        cyclical_cols = [c for c in df_columns if c in ["hora_sin", "hora_cos", "dia_semana_sin", "dia_semana_cos"]]
-        categorical_cols = [c for c in df_columns if c in ["es_fin_de_semana", "es_hora_pico", "dia_semana", "mes", "hora"]]
-    else:
-        numeric_cols = [f"{t}_lag_{lag}" for t in ["inflow", "outflow"] for lag in [1, 2, 3, 24, 168]]
-        cyclical_cols = ["hora_sin", "hora_cos", "dia_semana_sin", "dia_semana_cos"]
-        categorical_cols = ["es_fin_de_semana", "es_hora_pico"]
-
+def get_feature_groups() -> Dict[str, List[str]]:
+    """Retorna el contrato exacto de columnas de entrada por grupo funcional."""
     return {
-        "numeric_features": numeric_cols,
-        "cyclical_features": cyclical_cols,
-        "categorical_features": categorical_cols,
-        "all_model_features": numeric_cols + cyclical_cols + categorical_cols
+        "station_features": STATION_COL,
+        "calendar_features": CALENDAR_COLS,
+        "cyclical_features": CYCLICAL_COLS,
+        "numeric_history_features": NUMERIC_HISTORY_COLS,
+        "all_features": ALL_FEATURE_COLS,
+        "targets": TARGET_COLS,
     }
 
-def build_preprocessing_pipeline(numeric_cols: Optional[List[str]] = None) -> ColumnTransformer:
-    """
-    Constructs a ColumnTransformer to scale numeric lags/rolling stats and pass through cyclical signals.
-    """
-    if numeric_cols is None:
-        feature_dict = get_feature_names()
-        numeric_cols = feature_dict["numeric_features"]
-        cyc_cols = feature_dict["cyclical_features"]
-        cat_cols = feature_dict["categorical_features"]
-    else:
-        cyc_cols = ["hora_sin", "hora_cos", "dia_semana_sin", "dia_semana_cos"]
-        cat_cols = ["es_fin_de_semana", "es_hora_pico"]
 
-    preprocessor = ColumnTransformer(
+def build_preprocessing_pipeline() -> ColumnTransformer:
+    """Construye el ColumnTransformer determinista sobre las 29 features de v2."""
+    return ColumnTransformer(
         transformers=[
-            ("num_scaler", RobustScaler(), numeric_cols),
-            ("cyclical_passthrough", "passthrough", cyc_cols),
-            ("cat_passthrough", "passthrough", cat_cols)
+            (
+                "station_encoder",
+                OrdinalEncoder(handle_unknown="use_encoded_value", unknown_value=-1),
+                STATION_COL,
+            ),
+            ("history_scaler", RobustScaler(), NUMERIC_HISTORY_COLS),
+            ("calendar_passthrough", "passthrough", CALENDAR_COLS),
+            ("cyclical_passthrough", "passthrough", CYCLICAL_COLS),
         ],
-        remainder="drop"
+        remainder="drop",
+        verbose_feature_names_out=False,
     )
-    return preprocessor
 
-def create_full_pipeline(estimator: Any, numeric_cols: Optional[List[str]] = None) -> Pipeline:
-    """Combines the preprocessor and estimator into an end-to-end reproducible Scikit-Learn Pipeline."""
-    preprocessor = build_preprocessing_pipeline(numeric_cols)
-    return Pipeline([
-        ("preprocessor", preprocessor),
-        ("estimator", estimator)
-    ])
 
-if __name__ == "__main__":
-    print("Probando mibici/pipeline.py...")
-    pipe = build_preprocessing_pipeline()
-    print("Pipeline de preprocesamiento construido exitosamente:", pipe)
+def create_full_pipeline(params: Optional[Dict[str, Any]] = None) -> Pipeline:
+    """Fija el pipeline completo: ColumnTransformer -> MultiOutput HistGradientBoosting."""
+    default_params: Dict[str, Any] = {
+        "loss": "poisson",
+        "max_iter": 450,
+        "max_depth": None,
+        "max_leaf_nodes": 127,
+        "min_samples_leaf": 30,
+        "learning_rate": 0.05,
+        "l2_regularization": 0.1,
+        "random_state": 42,
+    }
+    if params:
+        default_params.update(params)
+
+    base_estimator = HistGradientBoostingRegressor(**default_params)
+    multi_estimator = MultiOutputRegressor(base_estimator)
+
+    return Pipeline(
+        steps=[
+            ("preprocessor", build_preprocessing_pipeline()),
+            ("estimator", multi_estimator),
+        ]
+    )

@@ -1,0 +1,40 @@
+name: CI - Lint y Pruebas Automáticas
+
+on:
+  push:
+    branches: ["main", "develop"]
+  pull_request:
+    branches: ["main", "develop"]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Instalar dependencias y paquete local
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -e . --no-deps
+          pip install pytest httpx flake8 black isort
+
+      - name: Verificar formato y estilo (flake8, isort, black)
+        run: |
+          flake8 --max-line-length=99 mibici tests
+          isort --check --diff mibici tests
+          black --check mibici tests
+
+      - name: Ejecutar suite de pruebas unitarias e integración
+        env:
+          MLFLOW_TRACKING_URI: "file:./mlruns_ci"
+        run: |
+          pytest -v --tb=short

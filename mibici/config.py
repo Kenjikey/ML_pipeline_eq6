@@ -3,6 +3,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from loguru import logger
+import yaml
 
 # Load environment variables from .env file if it exists
 load_dotenv()
@@ -34,6 +35,9 @@ for directory in [
 
 # Project Parameters - MiBici 2023
 TARGET_YEAR = 2023
+DATASET_VERSION = "v2"
+FEATURES_FILENAME = f"features_{TARGET_YEAR}_{DATASET_VERSION}.parquet"
+REGISTERED_MODEL_NAME = "mibici_balance_predictor"
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI", "http://127.0.0.1:5001")
 MLFLOW_EXPERIMENT_NAME = "mibici_balance_estaciones_2023"
 
@@ -46,3 +50,14 @@ try:
     logger.add(lambda msg: tqdm.write(msg, end=""), colorize=True)
 except ModuleNotFoundError:
     pass
+
+CONFIGS_DIR = PROJ_ROOT / "configs"
+
+
+def load_yaml_config(filename: str) -> dict:
+    """Carga un archivo de configuracion YAML desde configs/."""
+    config_path = CONFIGS_DIR / filename
+    if not config_path.exists():
+        raise FileNotFoundError(f"Archivo de configuracion no encontrado: {config_path}")
+    with config_path.open("r", encoding="utf-8") as f:
+        return yaml.safe_load(f) or {}

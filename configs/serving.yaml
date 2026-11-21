@@ -1,0 +1,9 @@
+model_name: "mibici_balance_predictor"
+model_version: "1"
+model_uri: "models:/mibici_balance_predictor/1"
+fallback_bundle_path: "models/mibici_balance_pipeline.joblib"
+schema_path: "models/model_schema.json"
+
+prediction_threshold: 2.0   # >= +2.0 superavit | <= -2.0 deficit
+max_batch_size: 1000
+request_timeout: 30

@@ -198,3 +198,12 @@ mlflow.db-*
 mlartifacts/
 models/*.joblib
 .DS_Store
+
+
+data/
+mlruns/
+mlruns_ci/
+mlflow.db
+*.sqlite
+.pytest_cache/
+__pycache__/

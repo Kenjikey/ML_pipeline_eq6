@@ -1,17 +1,12 @@
-"""
-Unit tests for data validation and basic structures.
-"""
-"""Pruebas pequeñas: reglas de limpieza, conservación de conteos y trazabilidad."""
 
 import json
-
+import unittest
 import mlflow
-from mlflow.tracking import MlflowClient
 import numpy as np
 import pandas as pd
 import pytest
+from mlflow.tracking import MlflowClient
 from typer.testing import CliRunner
-
 from mibici.config import MLFLOW_EXPERIMENT_NAME
 from mibici.dataset import app as dataset_app
 from mibici.dataset import (
@@ -28,6 +23,12 @@ from mibici.features import app as features_app
 from mibici.features import validate_hourly_grid
 from mibici.plots import app as plots_app
 from mibici.tracking import file_metadata
+
+"""
+Unit tests for data validation and basic structures.
+"""
+
+"""Pruebas pequeñas: reglas de limpieza, conservación de conteos y trazabilidad."""
 
 
 def trip(trip_id=1, **changes):
@@ -171,30 +172,32 @@ def test_invalid_grid_is_rejected(problem):
     with pytest.raises(ValueError):
         validate_hourly_grid(grid)
 
-import unittest
-import pandas as pd
-import numpy as np
 
 class TestDataIntegrity(unittest.TestCase):
     def test_sample_dataframe_structure(self):
         """Valida que los tipos de datos basicos de viajes tengan el formato requerido."""
-        df = pd.DataFrame({
-            "Viaje_Id": [100, 101],
-            "Inicio_del_viaje": ["2023-01-01 08:00:00", "2023-01-01 08:30:00"],
-            "Fin_del_viaje": ["2023-01-01 08:15:00", "2023-01-01 08:45:00"],
-            "Origen_Id": [1, 2],
-            "Destino_Id": [2, 1]
-        })
-        
+        df = pd.DataFrame(
+            {
+                "Viaje_Id": [100, 101],
+                "Inicio_del_viaje": ["2023-01-01 08:00:00", "2023-01-01 08:30:00"],
+                "Fin_del_viaje": ["2023-01-01 08:15:00", "2023-01-01 08:45:00"],
+                "Origen_Id": [1, 2],
+                "Destino_Id": [2, 1],
+            }
+        )
+
         df["Inicio_del_viaje"] = pd.to_datetime(df["Inicio_del_viaje"])
         df["Fin_del_viaje"] = pd.to_datetime(df["Fin_del_viaje"])
         duraciones = (df["Fin_del_viaje"] - df["Inicio_del_viaje"]).dt.total_seconds()
-        
+
         self.assertEqual(len(df), 2)
         self.assertTrue((duraciones > 0).all())
 
+
 if __name__ == "__main__":
     unittest.main()
+
+
 def test_cli_pipeline_registers_two_finished_mlflow_runs(tmp_path):
     raw = tmp_path / "raw"
     raw.mkdir()
