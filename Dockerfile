@@ -15,10 +15,10 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 COPY pyproject.toml requirements.txt README.md ./
+COPY mibici/ ./mibici/
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt
 
-COPY mibici/ ./mibici/
 COPY configs/ ./configs/
 COPY models/mibici_balance_pipeline.joblib ./models/mibici_balance_pipeline.joblib
 COPY models/model_schema.json ./models/model_schema.json
